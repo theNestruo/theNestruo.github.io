@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
 	<style>
-		h2 {
+		.align-right {
 			text-align: right;
 		}
 		.muted {
@@ -37,6 +37,16 @@
 		article > input:checked + header + section {
     		display: block;
 		}
+		@media (max-width: 767px) {
+			.hidden-small {
+				display: none;
+			}
+		}
+		@media (min-width: 768px) {
+			.hidden-large {
+				display: none;
+			}
+		}
 		.fab {
 			position: fixed;
 			bottom: 50px;
@@ -54,7 +64,6 @@
 		}
 		.hidden {
 			display: none;
-			visibility: hidden;
 		}
 	</style>
 </head>
@@ -66,14 +75,14 @@
 			<small class="muted"><i>#msx</i> <i>#assembly</i> <i>#z80</i></small></p>
 	</header>
 
-	<h2>2021</h2>
+	<h1 class="align-right">2021</h1>
 
 	<article>
 		<input type="checkbox" id="2021-11-18" class="hidden"/>
 		<header>
 			<label for="2021-11-18">
-				<h1>Z80 Assembly meter v2.0.0
-					<small><a id="link-2021-11-18" href="https://github.com/theNestruo/z80-asm-meter-vscode/releases/tag/2.0.0">Nov 18</a></small></h1>
+				<h2>Z80 Assembly meter v2.0.0
+					<small><a id="link-2021-11-18" href="https://github.com/theNestruo/z80-asm-meter-vscode/releases/tag/2.0.0">Nov 18</a></small></h2>
 			</label>
 		</header>
 		<section>
@@ -82,7 +91,7 @@
 				and gains support for Pasmo, SDCC, and SjASMPlus assembler syntax.</p>
 			<p><img src="./images/Z80AsmMeter-screenshot.png"/></p>
 			<p>Get it here:
-				<a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.z80-asm-meter">Z80 Assembly meter <i class="bi-code-slash"></i></a></i></p>
+				<a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.z80-asm-meter">Z80 Assembly meter <i class="bi-microsoft"></i></a></i></p>
 			<p>Browse the source code at
 				<a href="https://github.com/theNestruo/z80-asm-meter-vscode">github.com/theNestruo/z80-asm-meter-vscode <i class="bi-github"></i></a></i></p>
 			<p>Happy coding!!</p>
@@ -93,16 +102,19 @@
 		<input type="checkbox" id="2021-10-18" checked=true class="hidden" />
 		<header>
 			<label for="2021-10-18">
-				<h1>Happy birthday, Stevedore!
-					<small><a id="link-2021-10-18" href="https://twitter.com/NestorSancho/status/1450143657013690369">Oct 18</a></small></h1>
+				<h2>Happy birthday, Stevedore!
+					<small><a id="link-2021-10-18" href="https://twitter.com/NestorSancho/status/1450143657013690369">Oct 18</a></small></h2>
 			</label>
 		</header>
 		<section>
 			<p>Happy birthday, Stevedore!</p>
 			<p><a href="#2020-10-19">One year ago</a>, Stevedore for MSX was released.<br/>
 				To celebrate the first anniversary, you can now play (and download) for free at
-				<a href="https://thenestruo.itch.io/stevedore">thenestruo.itch.io/stevedore</a>.</p>
-			<iframe src="https://itch.io/embed/1219978?bg_color=fff&amp;fg_color=222&amp;link_color=0091B4&amp;border_color=1daed1" width="552" height="167" frameborder="0"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
+				<a href="https://thenestruo.itch.io/stevedore">thenestruo.itch.io/stevedore <i class="bi-controller"></i></a></p>
+			<iframe src="https://itch.io/embed/1219978?bg_color=fff&amp;fg_color=222&amp;link_color=0091B4&amp;border_color=1daed1" width="208" height="167" frameborder="0" class="hidden hidden-dark hidden-large"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
+			<iframe src="https://itch.io/embed/1219978?bg_color=fff&amp;fg_color=222&amp;link_color=0091B4&amp;border_color=1daed1" width="552" height="167" frameborder="0" class="hidden hidden-dark hidden-small"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
+			<iframe src="https://itch.io/embed/1219978?bg_color=222&amp;fg_color=eee&amp;link_color=0091B4&amp;border_color=4e4e4e" width="208" height="167" frameborder="0" class="hidden hidden-light hidden-large"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
+			<iframe src="https://itch.io/embed/1219978?bg_color=222&amp;fg_color=eee&amp;link_color=0091B4&amp;border_color=4e4e4e" width="552" height="167" frameborder="0" class="hidden hidden-light hidden-small"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
 			<p>Physical cartridges can be acquired at
 				<a href="http://msxcartridgeshop.com">MSX Cartridge Shop  <i class="bi-cart"></i></a></p>
 			<p>And you can browse the source code at
@@ -113,7 +125,7 @@
 			<p>Due a bug in BlueMSX 2.8.x emulator, players were getting a forced <i>game over</i> after loading a save state.<br/>
 				If you replace you .exe with BlueMSX 2.9.0, save states will work as intended.<br/>
 				Get the Blue MSX 2.9.0 compiled executable here:
-				<a href="https://github.com/ducasp/blueMSX/tree/master/Compiled%20Executable/Release">github.com/ducasp/blueMSX</a></p>
+				<a href="https://github.com/ducasp/blueMSX/tree/master/Compiled%20Executable/Release">github.com/ducasp/blueMSX <i class="bi-github"></i></a></p>
 		</section>
 	</article>
 
@@ -121,16 +133,16 @@
 		<input type="checkbox" id="2021-10-02" class="hidden"/>
 		<header>
 			<label for="2021-10-02">
-				<h1>PCXTOOLS v3.0
-					<small><a href="https://github.com/theNestruo/pcxtools/releases/tag/v3.0">Oct 02</a></small></h1>
+				<h2>PCXTOOLS v3.0
+					<small><a href="https://github.com/theNestruo/pcxtools/releases/tag/v3.0">Oct 02</a></small></h2>
 			</label>
 		</header>
 		<section>
-			<p><b>PNG2MSX</b> and <b>PNG2SPR[+]</b> are free command line tools to convert PNG images to TMS9918 (MSX-1 VDP) format
+			<p><i>PNG2MSX</i> and <i>PNG2SPR[+]</i> are free command line tools to convert PNG images to TMS9918 (MSX-1 VDP) format
 				(i.e. CHRTBL/CLRTBL/NAMTBL-ready values, and SPRTBL/SPATBL-ready values).</p>
-			<p><b>TMX2BIN</b> is a free command line tool to convert Tiled maps to binary.</p>
-			<p>The new version 3.0 uses PNG (Portable Network Graphics) files as inputs,
-				instead of the obsolete PCX (PiCture eXchange).</p>
+			<p><i>TMX2BIN</i> is a free command line tool to convert Tiled maps to binary.</p>
+			<p>The new version 3.0 uses PNG <i>(Portable Network Graphics)</i> files as inputs,
+				instead of the obsolete PCX <i>(PiCture eXchange)</i>.</p>
 			<p>Get them and browse the source code at
 				<a href="https://github.com/theNestruo/pcxtools">github.com/theNestruo/pcxtools <i class="bi-github"></i></a></i></p>
 			<p>Happy coding!!</p>
@@ -141,12 +153,13 @@
 		<input type="checkbox" id="2021-07-08" checked=true class="hidden"/>
 		<header>
 			<label for="2021-07-08">
-				<h1>Youkai Yashiki - Graphics patch
-					<small><a href="https://twitter.com/NestorSancho/status/1413133401608003590">Jul 8</a></small></h1>
+				<h2>Youkai Yashiki - Graphics patch
+					<small><a href="https://twitter.com/NestorSancho/status/1413133401608003590">Jul 8</a></small></h2>
 			</label>
 		</header>
 		<section>
-			<p><a href="https://twitter.com/yazioh/status/1402255582363414534">One month ago</a>, those superb graphics by <a href="https://twitter.com/yazioh"><i class="bi-twitter"></i>&nbsp;yazioh</a>
+			<p><a href="https://twitter.com/yazioh/status/1402255582363414534">One month ago</a>,
+				these superb graphics by <a href="https://twitter.com/yazioh"><i class="bi-twitter"></i>&nbsp;yazioh</a>
 				were just a mock-up of <a href="https://www.generation-msx.nl/software/casio/ghost-house/874/"><i>Youkai Yashiki (CASIO, 1986)</i></a>,
 				also known as <i>Ghost House</i>, for MSX</p>
 			<p><img src="./images/YoukaiYashiki-mockup.png"/></p>
@@ -162,7 +175,8 @@
 				<li>EN, with reworked items (hamburguer, four leaf clover, sneakers&hellip;) and translated ending message.</li>
 			</ul></p>
 			<p>Additionally, a minipatch is provided for those who want to play with enhancements but using the original graphics.</p>
-			<p>Get it here: <a href="./files/Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip">Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip <i class="bi-download"></i></a></p>
+			<p>Get it here:
+				<a href="./files/Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip">Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip <i class="bi-download"></i></a></p>
 			<p>Enjoy!!</p>
 		</section>
 	</article>
@@ -171,8 +185,8 @@
 		<input type="checkbox" id="2021-05-26" checked=true class="hidden"/>
 		<header>
 			<label for="2021-05-26">
-				<h1>Pyramid Warp Enhanced+
-					<small><a href="https://twitter.com/NestorSancho/status/1397619135916519426">May 26</a></small></h1>
+				<h2>Pyramid Warp Enhanced+
+					<small><a href="https://twitter.com/NestorSancho/status/1397619135916519426">May 26</a></small></h2>
 			</label>
 		</header>
 		<section>
@@ -197,29 +211,29 @@
 		<input type="checkbox" id="2021-04-23" class="hidden"/>
 		<header>
 			<label for="2021-04-23">
-				<h1>Dark- (Visual Studio Code theme) released
-					<small><a href="#">Apr 23</a></small></h1>
+				<h2>Dark- (VSCode theme) released
+					<small><a href="#">Apr 23</a></small></h2>
 			</label>
 		</header>
 		<section>
 			<p>Simple dark themes, based on the default Dark (Visual Studio) theme but with less syntax highlight.</p>
 			<p><img src="./images/Dark--screenshot.png"/></p>
-			<p>Get it here:
-				<a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.dark-minus-theme">Dark- <i class="bi-code-slash"></i></a></i></p>
+			<p>Get them here:
+				<a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.dark-minus-theme">Dark- <i class="bi-microsoft"></i></a></i></p>
 			<p>Browse the source code at
 				<a href="https://github.com/theNestruo/dark-minus-theme-vscode">github.com/theNestruo/dark-minus-theme-vscode <i class="bi-github"></i></a></i></p>
 			<p>Happy coding!!</p>
 		</section>
 	</article>
 
-	<h2>2020</h2>
+	<h1 class="align-right">2020</h1>
 
 	<article>
 		<input type="checkbox" id="2020-10-19" class="hidden"/>
 		<header>
 			<label for="2020-10-19">
-				<h1>Stevedore
-					<small><a href="https://twitter.com/NestorSancho/status/1318174253200662529">Oct 19</a></small></h1>
+				<h2>Stevedore
+					<small><a href="https://twitter.com/NestorSancho/status/1318174253200662529">Oct 19</a></small></h2>
 			</label>
 		</header>
 		<section>
@@ -227,8 +241,8 @@
 			<p>Available now at
 				<a href="http://msxcartridgeshop.com">MSX Cartridge Shop <i class="bi-cart"></i></a>!</p>
 
-			<h3>Update <small class="muted">Oct 18, 2021</small></h3>
-			<p><a href="#link-2021-10-18">You can now play (and download) for free <i class="bi-link-45deg"></i></a></p>
+			<h3>Update <small class="muted"><a href="#link-2021-10-18">Oct 18, 2021</a></small></h3>
+			<p>You can now play (and download) for free</p>
 		</section>
 	</article>
 
@@ -236,55 +250,58 @@
 		<input type="checkbox" id="2020-03-08" class="hidden"/>
 		<header>
 			<label for="2020-03-08">
-				<h1>Z80 Assembly meter v1.0.0
-					<small><a id="link-2020-03-08" href="https://github.com/theNestruo/z80-asm-meter-vscode/releases/tag/1.0.0">Mar 8</a></small></h1>
+				<h2>Z80 Assembly meter v1.0.0
+					<small><a id="link-2020-03-08" href="https://github.com/theNestruo/z80-asm-meter-vscode/releases/tag/1.0.0">Mar 8</a></small></h2>
 			</label>
 		</header>
 		<section>
 			<p>The Z80 Assembly meter extension for Visual Studio Code reaches version 1.0.0
 				and gains support for Z80N (ZX Spectrum Next Extended Z80 instruction set).</p>
 			<p>Get it here:
-				<a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.z80-asm-meter">Z80 Assembly meter <i class="bi-code-slash"></i></a></i></p>
+				<a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.z80-asm-meter">Z80 Assembly meter <i class="bi-microsoft"></i></a></i></p>
 			<p>Browse the source code at
 				<a href="https://github.com/theNestruo/z80-asm-meter-vscode">github.com/theNestruo/z80-asm-meter-vscode <i class="bi-github"></i></a></i></p>
 			<p>Happy coding!!</p>
-			<h3>Update <small class="muted">Nov 18, 2021</small></h3>
-			<p><a href="#link-2021-11-18">Version 2.0.0 <i class="bi-link-45deg"></i></a></p>
+
+			<h3>Update <small class="muted"><a href="#link-2021-11-18">Nov 18, 2021</a></small></h3>
+			<p>Major version 2.0.0 released</p>
 		</section>
 	</article>
 
-	<h2>2019</h2>
+	<h1 class="align-right">2019</h1>
 
 	<article>
 		<input type="checkbox" id="2020-09-14" class="hidden"/>
 		<header>
 			<label for="2020-09-14">
-				<h1>Z80 Assembly meter (Visual Studio Code extension) released
-					<small><a href="https://github.com/theNestruo/z80-asm-meter-vscode/releases/tag/0.1.0">Sep 14</a></small></h1>
+				<h2>Z80 Assembly meter (VSCode extension) released
+					<small><a href="https://github.com/theNestruo/z80-asm-meter-vscode/releases/tag/0.1.0">Sep 14</a></small></h2>
 			</label>
 		</header>
 		<section>
 			<p>The Z80 Assembly meter extension for Visual Studio Code meters clock cycles and bytecode size from Z80 assembly source code.</p>
 			<p>Get it here:
-				<a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.z80-asm-meter">Z80 Assembly meter <i class="bi-code-slash"></i></a></i></p>
+				<a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.z80-asm-meter">Z80 Assembly meter <i class="bi-microsoft"></i></a></i></p>
 			<p>Browse the source code at
 				<a href="https://github.com/theNestruo/z80-asm-meter-vscode">github.com/theNestruo/z80-asm-meter-vscode <i class="bi-github"></i></a></i></p>
 			<p>Happy coding!!</p>
-			<h3>Update <small class="muted">Mar 8, 2020</small></h3>
-			<p><a href="#link-2020-03-08">Version 1.0.0 <i class="bi-link-45deg"></i></a></p>
-			<h3>Update <small class="muted">Nov 18, 2021</small></h3>
-			<p><a href="#link-2021-11-18">Version 2.0.0 <i class="bi-link-45deg"></i></a></p>
+
+			<h3>Update <small class="muted"><a href="#link-2020-03-08">Mar 8, 2020</a></small></h3>
+			<p>Major version 1.0.0 released</p>
+
+			<h3>Update <small class="muted"><a href="#link-2021-11-18">Nov 18, 2021</a></small></h3>
+			<p>Major version 2.0.0 released</p>
 		</section>
 	</article>
 
-	<h2>2012</h2>
+	<h1 class="align-right">2012</h1>
 
 	<article>
 		<input type="checkbox" id="2012-02-05" class="hidden"/>
 		<header>
 			<label for="2012-02-05">
-				<h1>Congratulations, P&eacute;rez the Mouse!
-					<small><a id="link-2012-02-05" href="https://www.msxblog.es/concurso-msx-basic-2011-resultados-finales/">Feb 5</a></small></h1>
+				<h2>Congratulations, P&eacute;rez the Mouse!
+					<small><a id="link-2012-02-05" href="https://www.msxblog.es/concurso-msx-basic-2011-resultados-finales/">Feb 5</a></small></h2>
 			</label>
 		</header>
 		<section>
@@ -300,14 +317,14 @@
 		</section>
 	</article>
 
-	<h2>2011</h2>
+	<h1 class="align-right">2011</h1>
 
 	<article>
 		<input type="checkbox" id="2011-10-26" class="hidden"/>
 		<header>
 			<label for="2011-10-26">
-				<h1>P&eacute;rez the Mouse
-					<small><a href="https://www.msxblog.es/concurso-msx-basic-2011-1%C2%AA-entrada-perez-the-mouse/">Oct 26</a></small></h1>
+				<h2>P&eacute;rez the Mouse
+					<small><a href="https://www.msxblog.es/concurso-msx-basic-2011-1%C2%AA-entrada-perez-the-mouse/">Oct 26</a></small></h2>
 			</label>
 		</header>
 		<section>
@@ -323,50 +340,55 @@
 				<a href="./files/Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip">Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip <i class="bi-download"></i></a></p>
 			<p>Enjoy!!</p>
 
-			<h3>Update <small class="muted">Dec 13</small></h3>
-			<p><a href="https://www.msxblog.es/concurso-msx-basic-2011-perez-the-mouse-v1-1/">Contest entry updated! More graphics, more difficulty levels, more musics, and faster gameplay! <i class="bi-link-45deg"></i></a></p>
+			<h3>Update <small class="muted"><a href="https://www.msxblog.es/concurso-msx-basic-2011-perez-the-mouse-v1-1/">Dec 13</a></small></h3>
+			<p>Contest entry updated! More graphics, more difficulty levels, more musics, and faster gameplay!</p>
 
-			<h3>Update <small class="muted">Feb 5, 2012</small></h3>
-			<p><a href="#link-2012-02-05">P&eacute;rez the Mouse won first place in the MSX-BASIC Contest 2011! <i class="bi-link-45deg"></i></a></p>
+			<h3>Update <small class="muted"><a href="#link-2012-02-05">Feb 5, 2012</a></small></h3>
+			<p>P&eacute;rez the Mouse won first place in the MSX-BASIC Contest 2011!</p>
 		</section>
 	</article>
 
 	<footer>
-		<p><i class="bi-twitter"></i> <a href="https://twitter.com/NestorSancho">@NestorSancho</a></p>
-		<p><i class="bi-github"></i> <a href="https://github.com/theNestruo">github.com/theNestruo</a></p>
-		<p><i class="bi-joystick"></i> <a href="https://thenestruo.itch.io/">theNestruo.itch.io</a></p>
-		<p><i class="bi-code-slash"></i> <a href="https://marketplace.visualstudio.com/publishers/theNestruo">marketplace.visualstudio.com/publishers/theNestruo</a></p>
-		<p class="muted">Made with
-			<i class="bi-braces-asterisk"></i> <a href="https://watercss.kognise.dev/">Water.css</a> and
-			<i class="bi-bootstrap"></i> <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>, and hosted in
-			<i class="bi-github"></i> <a href="https://pages.github.com/">GitHub pages</a></p>
+		<p><a href="https://twitter.com/NestorSancho"><i class="bi-twitter"></i> @NestorSancho</a></p>
+		<p><a href="https://github.com/theNestruo"><i class="bi-github"></i> github.com/theNestruo</a></p>
+		<p><a href="https://thenestruo.itch.io/"><i class="bi-controller"></i> theNestruo.itch.io</a></p>
+		<p><a href="https://marketplace.visualstudio.com/publishers/theNestruo"><i class="bi-microsoft"></i> marketplace.visualstudio.com/publishers/theNestruo</a></p>
+		<p class="muted">Made with <a href="https://watercss.kognise.dev/">Water.css <i class="bi-filetype-css"></i></a>
+			and <a href="https://icons.getbootstrap.com/">Bootstrap Icons <i class="bi-bootstrap"></i></a><br/>
+			Hosted in <a href="https://pages.github.com/">GitHub pages <i class="bi-github"></i></a></p>
 	</footer>
 
-	<button id="btnLight" class="fab hidden" onclick="return onBtnLightClick();"><i class="bi-lightbulb"></i></button>
-	<button id="btnDark" class="fab hidden" onclick="return onBtnDarkClick();"><i class="bi-lightbulb-off"></i></button>
+	<button id="btnDark" class="fab hidden hidden-dark" onclick="return onBtnDarkClick();"><i class="bi-lightbulb-off"></i></button>
+	<button id="btnLight" class="fab hidden hidden-light" onclick="return onBtnLightClick();"><i class="bi-lightbulb"></i></button>
 
-	<script>
-		const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	<script defer>
 		const lightWaterCssUrl = "https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css";
 		const darkWaterCssUrl = "https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css";
 
-		function onBtnLightClick() {
-			waterStylesheet.href = lightWaterCssUrl;
-			return updateThemeButtonsVisibility(false);
-		}
-
 		function onBtnDarkClick() {
 			waterStylesheet.href = darkWaterCssUrl;
-			return updateThemeButtonsVisibility(true);
+			return updateThemeVisibility(true);
 		}
 
-		function updateThemeButtonsVisibility(dark) {
-			btnLight.classList.toggle("hidden", !dark);
-			btnDark.classList.toggle("hidden", dark);
+		function onBtnLightClick() {
+			waterStylesheet.href = lightWaterCssUrl;
+			return updateThemeVisibility(false);
+		}
+
+		function updateThemeVisibility(dark) {
+			var hiddenDarkElements = document.getElementsByClassName("hidden-dark");
+			for (var i = 0, n = hiddenDarkElements.length; i < n; i++) {
+				hiddenDarkElements[i].classList.toggle("hidden", dark);
+			}
+			var hiddenLightElements = document.getElementsByClassName("hidden-light");
+			for (var i = 0, n = hiddenLightElements.length; i < n; i++) {
+				hiddenLightElements[i].classList.toggle("hidden", !dark);
+			}
 			return true;
 		}
 
-		updateThemeButtonsVisibility(isDarkPreferred);
+		const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		updateThemeVisibility(isDarkPreferred);
 	</script>
 </body>
 
