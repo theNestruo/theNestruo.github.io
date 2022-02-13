@@ -5,12 +5,246 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@NestorSancho</title>
 
-	<title>test</title>
+	<!-- Water.css -->
+	<link rel="stylesheet" id="waterStylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+
+	<!-- Bootstrap icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+	<style>
+		h2 {
+			text-align: right;
+		}
+		.muted {
+			opacity: 0.5;
+		}
+		article {
+			padding: 0.5rem 2rem 1rem;
+			margin-bottom: 2rem;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+		}
+		article:hover {
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+		}
+		article > input + header > label {
+			cursor: pointer;
+		}
+		article > input + header + section {
+    		display: none;
+		}
+		article > input:checked + header + section {
+    		display: block;
+		}
+		.fab {
+			position: fixed;
+			bottom: 50px;
+			right: 50px;
+			width: 4rem;
+			height: 4rem;
+			border-radius: 100%;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+		}
+		.fab i {
+			align-items: center;
+			display: flex;
+			height: 100%;
+			justify-content: center;
+		}
+		.hidden {
+			display: none;
+			visibility: hidden;
+		}
+	</style>
 </head>
 
 <body>
-	<!-- test -->
+	<header>
+		<h1>N&eacute;stor Sancho <small class="muted">(theNestruo)</small></h1>
+		<p>Great stories start with <code>di</code>/<code>im 1</code>/<code>ld sp, $f380</code>
+			<small class="muted"><i>#msx</i> <i>#assembly</i> <i>#z80</i></small></p>
+	</header>
+
+	<h2>2021</h2>
+
+	<article>
+		<input type="checkbox" id="2021-11-18" checked=true class="hidden" />
+		<header>
+			<label for="2021-11-18">
+				<h1>Happy birthday, Stevedore!
+					<small><a id="link-2021-11-18" href="https://twitter.com/NestorSancho/status/1450143657013690369">Oct 18</a></small></h1>
+			</label>
+		</header>
+		<section>
+			<p>Happy birthday, Stevedore!</p>
+			<p><a href="#2020-10-19">One year ago</a>, Stevedore for MSX was released.<br/>
+				To celebrate the first anniversary, you can now play (and download) for free at
+				<a href="https://thenestruo.itch.io/stevedore">thenestruo.itch.io/stevedore</a>.</p>
+			<iframe src="https://itch.io/embed/1219978?bg_color=fff&amp;fg_color=222&amp;link_color=0091B4&amp;border_color=1daed1" width="552" height="167" frameborder="0"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
+			<p>Physical cartridges can be acquired at
+				<a href="http://msxcartridgeshop.com">MSX Cartridge Shop  <i class="bi-cart"></i></a></p>
+			<p>And you can browse the source code at
+				<a href="https://github.com/theNestruo/msx-stevedore">github.com/theNestruo/msx-stevedore <i class="bi-github"></i></a></p>
+			<p>Have fun!!</p>
+			<h3>Update <small><a href="https://twitter.com/NestorSancho/status/1459809408347779072">Nov 14</a></small></h3>
+			<p>Due a bug in BlueMSX 2.8.x emulator, players were getting a forced <i>game over</i> after loading a save state.<br/>
+				If you replace you .exe with BlueMSX 2.9.0, save states will work as intended.<br/>
+				Get the Blue MSX 2.9.0 compiled executable here:
+				<a href="https://github.com/ducasp/blueMSX/tree/master/Compiled%20Executable/Release">github.com/ducasp/blueMSX</a></p>
+		</section>
+	</article>
+
+	<article>
+		<input type="checkbox" id="2021-07-08" class="hidden"/>
+		<header>
+			<label for="2021-07-08">
+				<h1>Youkai Yashiki - Graphics patch
+					<small><a href="https://twitter.com/NestorSancho/status/1413133401608003590">Jul 8</a></small></h1>
+			</label>
+		</header>
+		<section>
+			<p><a href="https://twitter.com/yazioh/status/1402255582363414534">One month ago</a>, those superb graphics by <a href="https://twitter.com/yazioh"><i class="bi-twitter"></i>&nbsp;yazioh</a>
+				were just a mock-up of <a href="https://www.generation-msx.nl/software/casio/ghost-house/874/"><i>Youkai Yashiki (CASIO, 1986)</i></a>,
+				also known as <i>Ghost House</i>, for MSX</p>
+			<p><img src="./images/YoukaiYashiki-mockup.png"/></p>
+			<p>Today, you can play with those graphics!</p>
+			<p><img src="./images/YoukaiYashiki-GraphicsPatch-screenshot-0.png"/>
+				<img src="./images/YoukaiYashiki-GraphicsPatch-screenshot-1.png"/>
+				<img src="./images/YoukaiYashiki-GraphicsPatch-screenshot-2.png"/>
+				<img src="./images/YoukaiYashiki-GraphicsPatch-screenshot-3.png"/>
+				<img src="./images/YoukaiYashiki-GraphicsPatch-screenshot-4.png"/>
+				<img src="./images/YoukaiYashiki-GraphicsPatch-screenshot-5.png"/></p>
+			<p>The graphical patch for the game is offered in two flavours:<ul>
+				<li>JP, with the original items (onigiri, omamori, geta shoes&hellip;) and original ending message</li>
+				<li>EN, with reworked items (hamburguer, four leaf clover, sneakers&hellip;) and translated ending message.</li>
+			</ul></p>
+			<p>Additionally, a minipatch is provided for those who want to play with enhancements but using the original graphics.</p>
+			<p>Get it here: <a href="./files/Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip">Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip <i class="bi-download"></i></a></p>
+			<p>Enjoy!!</p>
+		</section>
+	</article>
+	<article>
+		<input type="checkbox" id="2021-05-26" class="hidden"/>
+		<header>
+			<label for="2021-05-26">
+				<h1>Pyramid Warp Enhanced+ <small><a href="https://twitter.com/NestorSancho/status/1397619135916519426">May 26</a></small></h1>
+			</label>
+		</header>
+		<section>
+			<p>Can you spot the differences between the original MSX <a href="https://www.generation-msx.nl/software/tesoft/pyramid-warp/64/"><i>Pyramid Warp (T&E soft, 1983)</i></a> and the Enhanced+ version?</p>
+			<p><img src="./images/PyramidWarp-screenshot-0.png"/>
+				<img src="./images/PyramidWarp-screenshot-1.png"/><br/>
+				<img src="./images/PyramidWarpEX-screenshot-0.png"/>
+				<img src="./images/PyramidWarpEX-screenshot-1.png"/></p>
+			<p>With music by <a href="https://twitter.com/bitcaffe"><i class="bi-twitter"></i>&nbsp;bitcaffe</a>
+				and graphics by <a href="https://twitter.com/nenefranz"><i class="bi-twitter"></i>&nbsp;nenefranz</a></p>
+			<p>Get it here:
+				<a href="https://github.com/theNestruo/msx-pyramidwarpex/releases/download/1.1/PyramidWarp.enhancedplus.rom">PyramidWarp.enhancedplus.rom <i class="bi-download"></i></a></p>
+			<p>Browse the source code, including an annotated disassembly of the original <i>Pyramid Warp (T&E soft, 1983)</i>, at
+				<a href="https://github.com/theNestruo/msx-pyramidwarpex">github.com/theNestruo/msx-pyramidwarpex <i class="bi-github"></i></a></i></p>
+			<p>Enjoy!!</p>
+		</section>
+	</article>
+
+	<h2>2020</h2>
+
+	<article>
+		<input type="checkbox" id="2020-10-19" class="hidden"/>
+		<header>
+			<label for="2020-10-19">
+				<h1>Stevedore <small><a href="https://twitter.com/NestorSancho/status/1318174253200662529">Oct 19</a></small></h1>
+			</label>
+		</header>
+		<section>
+			<p><img src="./images/Stevedore-packaging.jpg"/></p>
+			<p>Available now at <a href="http://msxcartridgeshop.com">MSX Cartridge Shop <i class="bi-cart"></i></a>!</p>
+			<h3>Update <small class="muted">Oct 18, 2021</small></h3>
+			<p><a href="#link-2021-11-18">You can now play (and download) for free <i class="bi-link-45deg"></i></a></p>
+		</section>
+	</article>
+
+	<h2>2012</h2>
+
+	<article>
+		<input type="checkbox" id="2012-02-05" class="hidden"/>
+		<header>
+			<label for="2012-02-05">
+				<h1>Congratulations, P&eacute;rez the Mouse! <small><a id="link-2012-02-05" href="https://www.msxblog.es/concurso-msx-basic-2011-resultados-finales/">Feb 5</a></small></h1>
+			</label>
+		</header>
+		<section>
+			<p>Congratulations, P&eacute;rez the Mouse!</p>
+			<p>P&eacute;rez the Mouse <a id="link-2012-02-05" href="https://www.msxblog.es/concurso-msx-basic-2011-resultados-finales/">won first place in the MSX-BASIC Contest 2011</a>!</p>
+			<p>Let's celebrate by revealing a little secret... Did you know there is an hidden jukebox in the cassette?</p>
+			<p><img src="./images/PerezTheMouse-screenshot-4.png"/>
+				<img src="./images/PerezTheMouse-screenshot-5.png"/></p>
+			<p>Get it here: <a href="./files/Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip">Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip <i class="bi-download"></i></a></p>
+			<p>Have fun!!</p>
+		</section>
+	</article>
+
+	<h2>2011</h2>
+
+	<article>
+		<input type="checkbox" id="2011-10-26" class="hidden"/>
+		<header>
+			<label for="2011-10-26">
+				<h1>P&eacute;rez the Mouse <small><a href="https://www.msxblog.es/concurso-msx-basic-2011-1%C2%AA-entrada-perez-the-mouse/">Oct 26</a></small></h1>
+			</label>
+		</header>
+		<section>
+			<p>P&eacute;rez the Mouse presented to <a href="https://www.msxblog.es/">MSXBlog</a>'s <a href="https://www.msxblog.es/category/concurso-msx-basic-2011/">MSX-BASIC Contest 2011</a>!</p>
+			<p><img src="./images/PerezTheMouse-screenshot-0.png"/>
+				<img src="./images/PerezTheMouse-screenshot-1.png"/><br/>
+				<img src="./images/PerezTheMouse-screenshot-2.png"/>
+				<img src="./images/PerezTheMouse-screenshot-3.png"/></p>
+			<p>With music by Wonder</p>
+			<p>Get it here: <a href="./files/Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip">Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip <i class="bi-download"></i></a></p>
+			<p>Enjoy!!</p>
+			<h3>Update <small class="muted">Dec 13</small></h3>
+			<p><a href="https://www.msxblog.es/concurso-msx-basic-2011-perez-the-mouse-v1-1/">Contest entry updated! More graphics, more difficulty levels, more musics, and faster gameplay! <i class="bi-link-45deg"></i></a></p>
+			<h3>Update <small class="muted">Feb 5, 2012</small></h3>
+			<p><a href="#link-2012-02-05">P&eacute;rez the Mouse won first place in the MSX-BASIC Contest 2011! <i class="bi-link-45deg"></i></a></p>
+		</section>
+	</article>
+
+	<footer>
+		<p><i class="bi-twitter"></i> <a href="https://twitter.com/NestorSancho">@NestorSancho</a></p>
+		<p><i class="bi-github"></i> <a href="https://github.com/theNestruo">github.com/theNestruo</a></p>
+		<p><i class="bi-joystick"></i> <a href="https://thenestruo.itch.io/">theNestruo.itch.io</a></p>
+		<p><i class="bi-code-slash"></i> <a href="https://marketplace.visualstudio.com/publishers/theNestruo">marketplace.visualstudio.com/publishers/theNestruo</a></p>
+		<p class="muted">Made with
+			<i class="bi-braces-asterisk"></i> <a href="https://watercss.kognise.dev/">Water.css</a> and
+			<i class="bi-bootstrap"></i> <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a></p>
+	</footer>
+
+	<button id="btnLight" class="fab hidden" onclick="return onBtnLightClick();"><i class="bi-lightbulb"></i></button>
+	<button id="btnDark" class="fab hidden" onclick="return onBtnDarkClick();"><i class="bi-lightbulb-off"></i></button>
+
+	<script>
+		const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const lightWaterCssUrl = "https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css";
+		const darkWaterCssUrl = "https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css";
+
+		function onBtnLightClick() {
+			waterStylesheet.href = lightWaterCssUrl;
+			return updateThemeButtonsVisibility(false);
+		}
+
+		function onBtnDarkClick() {
+			waterStylesheet.href = darkWaterCssUrl;
+			return updateThemeButtonsVisibility(true);
+		}
+
+		function updateThemeButtonsVisibility(dark) {
+			btnLight.classList.toggle("hidden", !dark);
+			btnDark.classList.toggle("hidden", dark);
+			return true;
+		}
+
+		updateThemeButtonsVisibility(isDarkPreferred);
+	</script>
 </body>
 
 </html>
