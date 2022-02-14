@@ -1,0 +1,70 @@
+/*
+ * modifiers
+ */
+.hidden {
+	display: none;
+}
+.muted {
+	opacity: 0.6;
+}
+
+/*
+ * responsiveness
+ */
+@media (max-width: 639px) {
+	.hidden-small {
+		display: none;
+	}
+}
+@media (min-width: 640px) {
+	.hidden-large {
+		display: none;
+	}
+}
+
+/*
+ * year markers aligned to right
+ */
+body > h1 {
+	text-align: right;
+}
+
+/*
+ * articles as collapsible cards
+ */
+article {
+	padding: 0.5rem 2rem 1rem;
+	margin-bottom: 2rem;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+}
+article:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+article > input + header > label {
+	cursor: pointer;
+}
+article > input + header + section {
+	display: none;
+}
+article > input:checked + header + section {
+	display: block;
+}
+
+/*
+ * floating action button
+ */
+.fab {
+	position: fixed;
+	bottom: 0.75rem;
+	right: 0.75rem;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+.fab i {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+}

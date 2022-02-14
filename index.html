@@ -13,59 +13,7 @@
 	<!-- Bootstrap icons -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-	<style>
-		.align-right {
-			text-align: right;
-		}
-		.muted {
-			opacity: 0.5;
-		}
-		article {
-			padding: 0.5rem 2rem 1rem;
-			margin-bottom: 2rem;
-			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-		}
-		article:hover {
-			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
-		}
-		article > input + header > label {
-			cursor: pointer;
-		}
-		article > input + header + section {
-    		display: none;
-		}
-		article > input:checked + header + section {
-    		display: block;
-		}
-		@media (max-width: 767px) {
-			.hidden-small {
-				display: none;
-			}
-		}
-		@media (min-width: 768px) {
-			.hidden-large {
-				display: none;
-			}
-		}
-		.fab {
-			position: fixed;
-			bottom: 50px;
-			right: 50px;
-			width: 4rem;
-			height: 4rem;
-			border-radius: 100%;
-			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-		}
-		.fab i {
-			align-items: center;
-			display: flex;
-			height: 100%;
-			justify-content: center;
-		}
-		.hidden {
-			display: none;
-		}
-	</style>
+	<link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
@@ -74,8 +22,9 @@
 		<p>Great stories start with <code>di</code>/<code>im 1</code>/<code>ld sp, $f380</code>
 			<small class="muted"><i>#msx</i> <i>#assembly</i> <i>#z80</i></small></p>
 	</header>
+	<hr/>
 
-	<h1 class="align-right">2021</h1>
+	<h1>2021</h1>
 
 	<article>
 		<input type="checkbox" id="2021-11-18" class="hidden"/>
@@ -226,7 +175,7 @@
 		</section>
 	</article>
 
-	<h1 class="align-right">2020</h1>
+	<h1>2020</h1>
 
 	<article>
 		<input type="checkbox" id="2020-10-19" class="hidden"/>
@@ -268,7 +217,7 @@
 		</section>
 	</article>
 
-	<h1 class="align-right">2019</h1>
+	<h1>2019</h1>
 
 	<article>
 		<input type="checkbox" id="2020-09-14" class="hidden"/>
@@ -294,7 +243,7 @@
 		</section>
 	</article>
 
-	<h1 class="align-right">2012</h1>
+	<h1>2012</h1>
 
 	<article>
 		<input type="checkbox" id="2012-02-05" class="hidden"/>
@@ -317,7 +266,7 @@
 		</section>
 	</article>
 
-	<h1 class="align-right">2011</h1>
+	<h1>2011</h1>
 
 	<article>
 		<input type="checkbox" id="2011-10-26" class="hidden"/>
@@ -361,35 +310,7 @@
 	<button id="btnDark" class="fab hidden hidden-dark" onclick="return onBtnDarkClick();"><i class="bi-lightbulb-off"></i></button>
 	<button id="btnLight" class="fab hidden hidden-light" onclick="return onBtnLightClick();"><i class="bi-lightbulb"></i></button>
 
-	<script defer>
-		const lightWaterCssUrl = "https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css";
-		const darkWaterCssUrl = "https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css";
-
-		function onBtnDarkClick() {
-			waterStylesheet.href = darkWaterCssUrl;
-			return updateThemeVisibility(true);
-		}
-
-		function onBtnLightClick() {
-			waterStylesheet.href = lightWaterCssUrl;
-			return updateThemeVisibility(false);
-		}
-
-		function updateThemeVisibility(dark) {
-			var hiddenDarkElements = document.getElementsByClassName("hidden-dark");
-			for (var i = 0, n = hiddenDarkElements.length; i < n; i++) {
-				hiddenDarkElements[i].classList.toggle("hidden", dark);
-			}
-			var hiddenLightElements = document.getElementsByClassName("hidden-light");
-			for (var i = 0, n = hiddenLightElements.length; i < n; i++) {
-				hiddenLightElements[i].classList.toggle("hidden", !dark);
-			}
-			return true;
-		}
-
-		const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
-		updateThemeVisibility(isDarkPreferred);
-	</script>
+	<script src="./index.js" defer></script>
 </body>
 
 </html>
