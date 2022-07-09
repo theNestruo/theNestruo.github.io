@@ -27,6 +27,55 @@
 	<h1>2022</h1>
 
 	<article>
+		<input type="checkbox" id="2022-07-09" class="hidden"/>
+		<header>
+			<label for="2022-07-09">
+				<h2>Stevedore password generator
+					<small><a id="2022-07-09">Jul 9</a></small></h2>
+			</label>
+		</header>
+		<section>
+			<p>Stevedore password system was cracked by MSX user Briqunullus on Jan 16, 2021, and then I shared the
+				<a href="https://gist.github.com/theNestruo/041e97024f3e2ef558f71e0eea531a52">password generator <i class="bi-github"></i></a>
+				I used during the development process as a <a href="https://gist.github.com/">GitHub Gist <i class="bi-github"></i></a>.</p>
+			<p>Today, I was talking with <a href="http://www.msxarea.com/editorial_esp.html">MSX AREA</a> editor
+				<a href="https://twitter.com/MSX_AREA"><i class="bi-twitter"></i>&nbsp;Juanmi Ortu&ntilde;o</a> about Stevedore,
+				then I remembered the password generator was not available online.</p>
+			<p>So here it is:</p>
+			<hr/>
+			<form id="stevedorePasswordForm">
+				<h3>Chapters unlocked</h3>
+				<input type="text" name="chapters" min="2" max="5" minlength="1" maxlength="1" size="1" value="2" onchange="stevedorePassword.refresh(); return true;">
+
+				<h3>Stars found</h3>
+				<div>
+					<input id="star1" type="checkbox" name="star1" value="1" onclick="stevedorePassword.refresh(); return true;"/>
+					<label for="star1">lighthouse</label>
+					<input id="star2" type="checkbox" name="star2" value="1" onclick="stevedorePassword.refresh(); return true;"/>
+					<label for="star2">abandoned ship</label>
+					<input id="star3" type="checkbox" name="star3" value="1" onclick="stevedorePassword.refresh(); return true;"/>
+					<label for="star3">shipwreck island</label>
+					<input id="star4" type="checkbox" name="star4" value="1" onclick="stevedorePassword.refresh(); return true;"/>
+					<label for="star4">uncanny cave</label>
+					<input id="star5" type="checkbox" name="star5" value="1" onclick="stevedorePassword.refresh(); return true;"/>
+					<label for="star5">ancient temple ruins</label>
+				</div>
+
+				<h3>Secret stage</h3>
+				<div>
+					<input id="secret" type="checkbox" name="secret" value="1" onclick="stevedorePassword.refresh();return true;"/>
+					<label for="secret">secret stage</label>
+				</div>
+
+				<h3>Password</h3>
+				<pre><input type="text" name="passwords" size="6" readonly/></pre>
+			</form>
+			<hr/>
+			<p>Have fun!!</p>
+		</section>
+	</article>
+
+	<article>
 		<input type="checkbox" id="2022-02-19" class="hidden"/>
 		<header>
 			<label for="2022-02-19">
@@ -326,6 +375,7 @@
 	<button id="btnLight" class="fab hidden hidden-light" onclick="return onBtnLightClick();"><i class="bi-lightbulb"></i></button>
 
 	<script src="./index.js" defer></script>
+	<script src="./stevedore-password-generator.js" defer></script>
 </body>
 
 </html>
