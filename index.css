@@ -52,9 +52,19 @@ article > input:checked + header + section {
 }
 
 /*
+ * permalinks
+ */
+article > input + header > label a.permalink {
+	display: none;
+}
+article > input:checked + header > label a.permalink {
+	display: inline;
+}
+
+/*
  * floating action button
  */
-.fab {
+button.fab {
 	position: fixed;
 	bottom: 0.75rem;
 	right: 0.75rem;
@@ -63,7 +73,7 @@ article > input:checked + header + section {
 	border-radius: 100%;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
-.fab i {
+button.fab i {
 	align-items: center;
 	display: flex;
 	height: 100%;
