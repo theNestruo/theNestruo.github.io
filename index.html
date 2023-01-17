@@ -24,15 +24,91 @@
 	</header>
 	<hr/>
 
+	<h1>2023</h1>
+
+	<article>
+		<input type="checkbox" id="2023-01-17" checked=true class="hidden"/>
+		<header>
+			<label for="2023-01-17">
+				<h2>A study of Sony HitBit firmware fonts
+					<small><a href="#link-2023-01-17" class="permalink"><i class="bi-share"></i></a></small>
+					<small><a id="link-2023-01-17">Jan 17</a></small></h2>
+			</label>
+		</header>
+		<section>
+			<p>(Not so) recently, I acquired a Sony <nobr>HB-11</nobr> MSX, also known as <i><nobr>HitBit U</nobr></i>.
+				The firmware of this computer was previously undumped, so I
+				<a href="./files/Sony_HB-11.zip">dumped it <i class="bi-download"></i></a></p>
+			<p>Beside the well-known features of Kanji-ROM, Japanese Word Processor, and English-Japanese dictionary
+				&mdash;they are written on top of the computer&mdash;, the firmware contains a quite unique feature:
+				the ability to change the system font with the extra BASIC instruction <code>CALL FONT(n)</code>.</p>
+			<p>Inspecting other firmwares, I found that Sony <nobr>HB-F900</nobr> also had a similar feature
+				with three additional fonts.</p>
+			<p>As the <nobr>HB-11</nobr> firmware easter egg is similar to the one present in the
+				Sony <nobr>HB-F1</nobr>/<nobr>HB-F1II</nobr> firmware, I analyzed it too.
+				I found two additional fonts (one used for the easter egg, the other one used sparingly in the firmware),
+				but no <code>CALL FONT</code> instruction.<br/>
+				However, those fonts can still be used as system fonts using the system variable CGPNT (0xF91F, 3 bytes):<ul>
+				<li>The easter egg font is located in the slot 3-0, at address 0x47CA for the <nobr>HB-F1</nobr>
+					(<code>POKE &HF91F,&H83:POKE &HF920,&HCA:POKE &HF921,&H47</code>), or 0x485C for the <nobr>HB-F1II</nobr>
+					(<code>POKE &HF91F,&H83:POKE &HF920,&H5C:POKE &HF921,&H48</code>).</li>
+				<li>The serif font is located in the slot 3-2, at address 0x554F for the <nobr>HB-F1</nobr>
+					(<code>POKE &HF91F,&H8B:POKE &HF920,&H4F:POKE &HF921,&H55</code>), or 0x54DB for the <nobr>HB-F1II</nobr>
+					(<code>POKE &HF91F,&H8B:POKE &HF920,&HDB:POKE &HF921,&H54</code>).</li>
+				</ul></p>
+			<hr/>
+			<p>Now, let's take a look at all these fonts in one single image:</p>
+			<p><a href="./images/SonyHitBit-fonts.png"><img src="./images/SonyHitBit-fonts.png"/></a></p>
+			<p>Regarding the kanji/kana part of the character set, it is curious that, despite the <nobr>HB-11</nobr>
+				has the greater number of alternative fonts (six fonts), all of them use the same kanji/kana set:
+				a less geometric and more scripted version of the default system font.
+				This kanji/kana set is also used for two of the alternative fonts of the <nobr>HB-F900</nobr>,
+				but it is not used in any of the <nobr>HB-F1</nobr>/<nobr>HB-F1II</nobr> alternative fonts.</p>
+			<p>The <nobr>HB-F1</nobr>/<nobr>HB-F1II</nobr> alternative fonts have two alternate kanji/kana sets:
+				one features slightly larger katakanas, and the other one uses a bold variant of those larger katakanas.
+				The rest of the characters of the kanji/kana set are different in every alternative font.</p>
+			<p>The <nobr>HB-F900</nobr> also have a bold kanji/kana set,
+				but it is not the same as the bold set from the <nobr>HB-F1</nobr>/<nobr>HB-F1II</nobr>:
+				in this alternative font, the entire kanji/kana set is bold, and seems to be based on the default system font
+				(unlike the <nobr>HB-F1</nobr>/<nobr>HB-F1II</nobr> version, that was based on the larger katakana set).</p>
+			<p>Regarding the western characters, the only alternative set that is actually shared between computers
+				is the LCD-like font. This font appears in both the <nobr>HB-11</nobr> and the <nobr>HB-F900</nobr>.
+				There is a serif alternative font in every firmware, but it is not exactly the same:</p>
+			<p>The <nobr>HB-F900</nobr> looks the first iteration of the serif font,
+				as some symbols are directly taken from the default system font,
+				and the lowercase letters seems to be designed using the default system font as a base.
+				The <nobr>HB-11</nobr> and the <nobr>HB-F1</nobr>/<nobr>HB-F1II</nobr> variants of the serif font
+				are more elaborated; more symbols and lowercase letters are redesigned.
+				Both are very similar to each other, but the <nobr>HB-F1</nobr>/<nobr>HB-F1II</nobr> version
+				seems to be the most evolved, based on some details in the uppercase and lowercase <i>C</i> letters
+				and the circumflex character.</p>
+			<hr/>
+			<p>Unfortunately, using this fonts as the system font is only useful for MSX-BASIC programs.</p>
+			<p>Early software that use the system font, such as <i>Mr. Chin (HAL Laboratory, 1984)</i>
+				or <i>Youkai Yashiki (CASIO, 1986)</i>, is not reading the system variable CGPNT
+				but CGTABL (0x0004, 2 bytes), that always points to the BIOS system font.</p>
+			<p>Fortunately, it is possible nowadays to patch a BIOS ROM, inject one of these fonts,
+				and create a fake custom BIOS. Using this BIOS (most likely, using emulators), we can experience
+				how would those early titles look with the cool looking LCD-like or Broadway-styled fonts
+				instead the boring system font:</p>
+			<p><img src="./images/SonyHitBit-Balance-screenshot.png"/>
+				<img src="./images/SonyHitBit-MrChin-screenshot.png"/></p>
+				<p>We can also imagine that different manufacturers could have used stylized system fonts
+					to give their computers a distinctive look and more personality:</p>
+			<p><img src="./images/SonyHitBit-BASIC-screenshot.png"/></p>
+			<p>Have fun!!</p>
+		</section>
+	</article>
+
 	<h1>2022</h1>
 
 	<article>
-		<input type="checkbox" id="2021-10-30" checked=true class="hidden"/>
+		<input type="checkbox" id="2022-10-30" checked=true class="hidden"/>
 		<header>
-			<label for="2021-10-30">
+			<label for="2022-10-30">
 				<h2>Youkai Yashiki - Graphics patch source code
-					<small><a href="#link-2021-10-30" class="permalink"><i class="bi-share"></i></a></small>
-					<small><a id="link-2021-10-30" href="https://github.com/theNestruo/msx-youkaiyashiki-patch/releases/tag/1.1">Oct 30</a></small></h2>
+					<small><a href="#link-2022-10-30" class="permalink"><i class="bi-share"></i></a></small>
+					<small><a id="link-2022-10-30" href="https://github.com/theNestruo/msx-youkaiyashiki-patch/releases/tag/1.1">Oct 30</a></small></h2>
 			</label>
 		</header>
 		<section>
