@@ -45,7 +45,7 @@
 			<p>Inspecting other firmwares, I found that Sony <nobr>HB-F900</nobr> also had a similar feature
 				with three additional fonts.</p>
 			<p>As the <nobr>HB-11</nobr> firmware easter egg is similar to the one present in the
-				Sony <nobr>HB-F1</nobr>/<nobr>HB-F1II</nobr> firmware, I analyzed it too.
+				Sony <nobr>HB-F1</nobr>/<nobr>HB-F1II</nobr> firmwares, I analyzed them too.
 				I found two additional fonts (one used for the easter egg, the other one used sparingly in the firmware),
 				but no <code>CALL FONT</code> instruction.<br/>
 				However, those fonts can still be used as system fonts using the system variable CGPNT (0xF91F, 3 bytes):<ul>
@@ -83,14 +83,14 @@
 				seems to be the most evolved, based on some details in the uppercase and lowercase <i>C</i> letters
 				and the circumflex character.</p>
 			<hr/>
-			<p>Unfortunately, using this fonts as the system font is only useful for MSX-BASIC programs.</p>
+			<p>Unfortunately, using these fonts as the system font is only useful for MSX-BASIC programs.</p>
 			<p>Early software that use the system font, such as <i>Mr. Chin (HAL Laboratory, 1984)</i>
 				or <i>Youkai Yashiki (CASIO, 1986)</i>, is not reading the system variable CGPNT
-				but CGTABL (0x0004, 2 bytes), that always points to the BIOS system font.</p>
+				but CGTABL (0x0004, 2 bytes), that always points to the BIOS default system font.</p>
 			<p>Fortunately, it is possible nowadays to patch a BIOS ROM, inject one of these fonts,
 				and create a fake custom BIOS. Using this BIOS (most likely, using emulators), we can experience
 				how would those early titles look with the cool looking LCD-like or Broadway-styled fonts
-				instead the boring system font:</p>
+				instead the boring default system font:</p>
 			<p><img src="./images/SonyHitBit-Balance-screenshot.png"/>
 				<img src="./images/SonyHitBit-MrChin-screenshot.png"/></p>
 				<p>We can also imagine that different manufacturers could have used stylized system fonts
