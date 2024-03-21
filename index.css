@@ -35,11 +35,12 @@ body > h2 {
 article {
 	padding: 0rem 1.5rem 0.5rem;
 	margin-bottom: 2rem;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
-	border-radius: 0.5rem;
+	box-shadow: 0 3px 4px 0 rgba(0,0,0,0.4);
+	border-radius: 0.4rem;
+	border: 1px rgba(0,0,0,0.6) solid;
 }
 article:hover {
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.6);
 }
 article > input + header > label {
 	cursor: pointer;
@@ -49,6 +50,12 @@ article > input + header + section {
 }
 article > input:checked + header + section {
 	display: block;
+}
+article > section img {
+	border-radius: 0.4rem
+}
+article > section p.center {
+	text-align: center;
 }
 
 /*
@@ -71,7 +78,7 @@ button.fab {
 	width: 4rem;
 	height: 4rem;
 	border-radius: 100%;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.4);
 }
 button.fab i {
 	align-items: center;
