@@ -1,21 +1,33 @@
 /*
- * modifiers
+ * Modifiers
  */
+
+.center {
+	text-align: center;
+}
+
 .hidden {
 	display: none;
 }
+
 .muted {
 	opacity: 0.6;
 }
 
+.nowrap {
+	white-space: nowrap;
+}
+
 /*
- * responsiveness
+ * Responsiveness
  */
+
 @media (max-width: 639px) {
 	.hidden-small {
 		display: none;
 	}
 }
+
 @media (min-width: 640px) {
 	.hidden-large {
 		display: none;
@@ -23,54 +35,51 @@
 }
 
 /*
- * year markers aligned to right
+ * Year markers aligned to right
  */
-body > h2 {
+
+body>h2 {
 	text-align: right;
 }
 
 /*
- * articles as collapsible cards
+ * Articles as collapsible cards
  */
-article {
-	padding: 0rem 1.5rem 0.5rem;
+
+details {
+	background-color: inherit;
 	margin-bottom: 2rem;
-	box-shadow: 0 3px 4px 0 rgba(0,0,0,0.4);
+	border: 1px rgba(0, 0, 0, 0.6) solid;
 	border-radius: 0.4rem;
-	border: 1px rgba(0,0,0,0.6) solid;
+	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.4);
+	padding: 0rem 1.5rem 0.5rem;
 }
-article:hover {
-	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.6);
+
+details[open] {
+	padding: 0rem 1.5rem 2rem;
 }
-article > input + header > label {
-	cursor: pointer;
+
+details:hover {
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.6);
 }
-article > input + header + section {
-	display: none;
+
+details>summary {
+	background-color: inherit;
+	list-style: none;
 }
-article > input:checked + header + section {
-	display: block;
+
+details>summary:hover {
+	text-decoration: none;
 }
-article > section img {
+
+details>p>img {
 	border-radius: 0.4rem
 }
-article > section p.center {
-	text-align: center;
-}
 
 /*
- * permalinks
+ * Floating action button
  */
-article > input + header > label a.permalink {
-	display: none;
-}
-article > input:checked + header > label a.permalink {
-	display: inline;
-}
 
-/*
- * floating action button
- */
 button.fab {
 	position: fixed;
 	bottom: 0.75rem;
@@ -78,8 +87,9 @@ button.fab {
 	width: 4rem;
 	height: 4rem;
 	border-radius: 100%;
-	box-shadow: 0 6px 8px 0 rgba(0,0,0,0.4);
+	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
 }
+
 button.fab i {
 	align-items: center;
 	display: flex;
