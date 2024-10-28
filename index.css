@@ -35,64 +35,50 @@
 }
 
 /*
- * Year markers aligned to right
+ * Header
  */
 
-body>h2 {
-	text-align: right;
+ header {
+	border-bottom: 1px solid var(--border);
+}
+
+header > button {
+	float: right;
 }
 
 /*
- * Articles as collapsible cards
+ * Content (as collapsible articles)
  */
 
 details {
 	background-color: inherit;
-	margin-bottom: 2rem;
-	border: 1px rgba(0, 0, 0, 0.6) solid;
-	border-radius: 0.4rem;
-	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.4);
-	padding: 0rem 1.5rem 0.5rem;
+	padding: 0;
 }
 
 details[open] {
-	padding: 0rem 1.5rem 2rem;
-}
-
-details:hover {
-	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.6);
+	padding: 0 0 2rem;
 }
 
 details>summary {
 	background-color: inherit;
 	list-style: none;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+details>summary small {
+	font-size: 1rem;
+	font-weight: 400;
 }
 
 details>summary:hover {
 	text-decoration: none;
 }
 
-details>p>img {
-	border-radius: 0.4rem
-}
-
 /*
- * Floating action button
+ * Content (details)
  */
 
-button.fab {
-	position: fixed;
-	bottom: 0.75rem;
-	right: 0.75rem;
-	width: 4rem;
-	height: 4rem;
-	border-radius: 100%;
-	box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
-}
-
-button.fab i {
-	align-items: center;
-	display: flex;
-	height: 100%;
-	justify-content: center;
+details>p>img {
+	border-radius: 0.4rem
 }
