@@ -1,3 +1,20 @@
+@import url('https://fonts.cdnfonts.com/css/literata-book');
+
+body {
+	font-family: 'Literata Book', serif;
+	text-wrap: pretty;
+}
+
+h1, details > summary, h3 {
+	font-weight: 600;
+	text-wrap: balance;
+}
+
+h1 > small, details > summary > small, h3 > small {
+	font-size: 1rem;
+	font-weight: 400;
+}
+
 /*
  * Modifiers
  */
@@ -38,7 +55,7 @@
  * Header
  */
 
- header {
+header {
 	border-bottom: 1px solid var(--border);
 }
 
