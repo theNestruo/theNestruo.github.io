@@ -10,9 +10,13 @@ h1, details > summary, h3 {
 	text-wrap: balance;
 }
 
-h1 > small, details > summary > small, h3 > small {
+header > h1 > small,
+header > p > small,
+details > summary > small,
+details > h3 > small {
 	font-size: 1rem;
 	font-weight: 400;
+	opacity: 0.75;
 }
 
 /*
@@ -25,10 +29,6 @@ h1 > small, details > summary > small, h3 > small {
 
 .hidden {
 	display: none;
-}
-
-.muted {
-	opacity: 0.6;
 }
 
 .nowrap {
