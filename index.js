@@ -23,5 +23,12 @@ function updateThemeVisibility(dark) {
 	return true;
 }
 
+function openDetailsForLocation(location) {
+	if (location?.hash) {
+		document.querySelector(`details:has(a${location.hash})`)?.setAttribute("open", true);
+	}
+}
+
 const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
 updateThemeVisibility(isDarkPreferred);
+openDetailsForLocation(document.location);
