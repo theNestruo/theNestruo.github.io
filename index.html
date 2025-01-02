@@ -15,7 +15,7 @@
     <link rel="stylesheet" id="waterStylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
 
     <!-- Bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="./index.css">
   </head>
@@ -34,6 +34,75 @@
     </header>
 
     <br>
+
+    <details>
+      <summary>Desperado - Music patch
+          <small><a id="link-2025-01-02" href="#link-2025-01-02"><i class="bi-share"></i> Jan 2, 2025</a></small>
+      </summary>
+
+      <p><i>Desperado (Topo Soft, 1987)</i>, also known as <i>Gunsmoke (Go!, 1987)</i>, was released for ZX Spectrum, Amstrad CPC, and MSX.</p>
+      <p>If you listen to the title music
+        (composed by <a href="https://es.wikipedia.org/wiki/C%C3%A9sar_Astudillo_%C2%ABGominolas%C2%BB"><i class="bi-wikipedia"></i> Gominolas</a>)
+        of the MSX and the Amstrad CPC versions, you will notice the MSX version is missing one entire channel.</p>
+      <p>This can be confirmed using the built-in <i>PSG Toy</i> tool of <i>meisei</i> MSX emulator (by Hap),
+        where channel C is continuously displays <code>$000 / 0</code>:</p>
+      <p class="center"><img src="./images/Desperado-PsgToy-0.png" loading="lazy"></p>
+      <p>Does this happen by a bug of the replayer code?<br>
+        Has it been deliberately cut to save space?<br>
+        Let's find out&hellip;</p>
+      <p><br>The following fragment of code initializes the music in the buffers used by the replayer:</p>
+      <pre>
+LA886:  ; ...
+        xor     a            ; Channel A
+        ld      de, $8854    ; Data for channel A
+        call    L7FE9        ; Initialize music channel (A)
+        inc     a            ; Channel B
+        ld      de, $88A3    ; Data for channel B
+        call    L7FE9        ; Initialize music channel (B)
+        inc     a            ; Channel C
+        ld      de, $898A    ; Data for channel C
+        call    L7FE9        ; Initialize music channel (C)
+LA8BE:  call    LAB4E        ; Check for any key
+        jr      z,LA8BE      ; Infinite loop until any key is pressed
+        ; ...</pre>
+      <p>And the first bytes of the data for every channel are:</p>
+      <pre>
+; Data for channel A
+L8854:  db      $85, $64, $87, $00, $81, $01, $80, $0C
+        db      $83, $10, $8C, $00, $21, $1F, $1D, $21, ...
+; Data for channel B
+L88A3:  db      $87, $01, $81, $01, $8A, $01, $80, $0C
+        db      $8C, $04, $83, $10, $39, $3C, $3C, $83, ...
+; Data for channel C
+L898A:  db      $8B, $00, $81, $01, $80, $0D, $83, $10
+        db      $30, $83, $08, $32, $33, $83, $10, $34, ...</pre>
+      <p>The replayer (invoked within the <code>H.TIMI</code> hook) is located at <code>L8008</code>.<br>
+        Reading its disassembly reveals that the bytes with its most significant bit (the <code>$80+n</code> bytes) are &ldquo;commands&rdquo;.
+        Each command invokes one subroutine based on the following indirection table:</p>
+      <pre>
+L84BB:  dw      L8202   ; Subroutine for command: $80
+        dw      L8220   ; Subroutine for command: $81
+        dw      L8282   ; Subroutine for command: $82
+        ...
+        dw      L822B   ; Subroutine for command: $8b
+        ...
+        dw      L8395   ; Subroutine for command: $8e
+        dw      -1      ; Subroutine for command: $8f (invalid)
+        ...
+        dw      -1      ; Subroutine for command: $e5 (invalid)</pre>
+      <p>Command <code>$8B</code>, only used in channel C, seems to completely mute a channel
+        (by zeroing the replayer working buffer for that channel).<br>
+        As it happens to appear in the first byte of the data for that channel,
+        it can be skipped by initializing the channel two bytes after (i.e.: <code>ld de, $898A + 2</code>),
+        unmuting the channel, and revealing that the full data for that channel is there.<br>
+        However, it will use a very monotonous timbre and a constant volume.</p>
+      <p>A better option is to remove that command <code>$8B</code>, replacing it by the command <code>$87</code>.<br>
+        This command <code>$87</code> is used at the beginning of the data of the other two channels,
+        and seems to set the &ldquo;instrument&rdquo;, the volume variations that shape a pseudo-envelope.</p>
+      <p>The difference is notable, as you can hear in <a href="https://x.com/araubiMSX"><i class="bi-twitter-x"></i> Araubi</a>'s <a href="https://x.com/araubiMSX/status/1874548246976360811">post in X</a>
+        and <a href="https://bsky.app/profile/araubi.bsky.social"><i class="bi-link"></i> Araubi</a>'s <a href="https://bsky.app/profile/araubi.bsky.social/post/3lepefcuwjs24">post in Bluesky</a>.</p>
+      <p>Enjoy!!</p>
+    </details>
 
     <details>
       <summary>Namcot patches
@@ -208,8 +277,8 @@
         </ul></p>
       <p>Now, let's take a look at all these fonts in one single image:</p>
       <p class="center"><a href="./images/SonyHitBit-fonts.png"><img src="./images/SonyHitBit-fonts.png" loading="lazy"></a></p>
-      <br>
-      <p>Regarding the kanji/kana part of the character set, it is curious that, despite the
+
+      <p><br>Regarding the kanji/kana part of the character set, it is curious that, despite the
         <span class="nowrap">HB-11</span>
         has the greater number of alternative fonts (six fonts), all of them use the same kanji/kana set:
 				a less geometric and more scripted version of the default system font.
@@ -233,8 +302,8 @@
         <span class="nowrap">HB-F1</span>/<span class="nowrap">HB-F1II</span>
         version, that was based on the larger katakana set).</p>
       <p class="center"><a href="./images/SonyHitBit-kanasComparison.png"><img src="./images/SonyHitBit-kanasComparison.png" loading="lazy"></a></p>
-      <br>
-      <p>Regarding the western characters, the only alternative set that is actually shared between computers
+
+      <p><br>Regarding the western characters, the only alternative set that is actually shared between computers
 				is the LCD-like font. This font appears in both the
         <span class="nowrap">HB-11</span>
         and the
@@ -259,8 +328,8 @@
         letters
 				and the circumflex character.</p>
       <p class="center"><a href="./images/SonyHitBit-serifEvolution.png"><img src="./images/SonyHitBit-serifEvolution.png" loading="lazy"></a></p>
-      <br>
-      <p>Unfortunately, using these fonts as the system font is only useful for MSX-BASIC programs.</p>
+
+      <p><br>Unfortunately, using these fonts as the system font is only useful for MSX-BASIC programs.</p>
       <p>Early software that use the system font, such as
         <i>Mr. Chin (HAL Laboratory, 1984)</i>
         or
@@ -668,21 +737,12 @@
     </details>
 
     <footer>
-      <p><a href="https://github.com/theNestruo"><i class="bi-github"></i>
-          github.com/theNestruo</a></p>
-      <p><a href="https://thenestruo.itch.io/"><i class="bi-controller"></i>
-          theNestruo.itch.io</a></p>
-      <p><a href="https://marketplace.visualstudio.com/publishers/theNestruo"><i class="bi-microsoft"></i>
-          marketplace.visualstudio.com/publishers/theNestruo</a></p>
-      <p>Made with
-        <a href="https://watercss.kognise.dev/">Water.css
-          <i class="bi-filetype-css"></i></a>
-        and
-        <a href="https://icons.getbootstrap.com/">Bootstrap Icons
-          <i class="bi-bootstrap"></i></a><br>
-        Hosted in
-        <a href="https://pages.github.com/">GitHub pages
-          <i class="bi-github"></i></a></p>
+      <p><a href="https://github.com/theNestruo"><i class="bi-github"></i> github.com/theNestruo</a></p>
+      <p><a href="https://thenestruo.itch.io/"><i class="bi-controller"></i> theNestruo.itch.io</a></p>
+      <p><a href="https://marketplace.visualstudio.com/publishers/theNestruo"><i class="bi-microsoft"></i> marketplace.visualstudio.com/publishers/theNestruo</a></p>
+      <p>Made with <a href="https://watercss.kognise.dev/">Water.css <i class="bi-filetype-css"></i></a>
+        and <a href="https://icons.getbootstrap.com/">Bootstrap Icons <i class="bi-bootstrap"></i></a><br>
+        Hosted in <a href="https://pages.github.com/">GitHub pages <i class="bi-github"></i></a></p>
     </footer>
 
     <script src="./index.js" defer></script>
