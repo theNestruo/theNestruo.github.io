@@ -12,14 +12,8 @@ function onBtnLightClick() {
 }
 
 function updateThemeVisibility(dark) {
-	var hiddenDarkElements = document.getElementsByClassName("hidden-dark");
-	for (var i = 0, n = hiddenDarkElements.length; i < n; i++) {
-		hiddenDarkElements[i].classList.toggle("hidden", dark);
-	}
-	var hiddenLightElements = document.getElementsByClassName("hidden-light");
-	for (var i = 0, n = hiddenLightElements.length; i < n; i++) {
-		hiddenLightElements[i].classList.toggle("hidden", !dark);
-	}
+	Array.from(document.getElementsByClassName("hidden-dark")).forEach(e => e.classList.toggle("hidden", dark));
+	Array.from(document.getElementsByClassName("hidden-light")).forEach(e => e.classList.toggle("hidden", !dark));
 	return true;
 }
 
