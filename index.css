@@ -1,7 +1,9 @@
+/* Typography */
+
 @import url('https://fonts.cdnfonts.com/css/literata-book');
 
 body {
-	font-family: 'Literata Book', 'Palatino Linotype', serif;
+	font-family: 'Literata Book', serif;
 	font-weight: normal;
 	text-wrap: pretty;
 }
@@ -20,25 +22,59 @@ details > h3 > small {
 	opacity: 0.75;
 }
 
-/*
- * Modifiers
- */
+/* Header */
 
-.center {
-	text-align: center;
+header {
+	border-bottom: 1px solid var(--border);
 }
 
-.hidden {
-	display: none;
+header > button {
+	float: right;
 }
 
-.nowrap {
-	white-space: nowrap;
+/* Content (as collapsible articles) */
+
+details {
+	background-color: inherit;
+	padding: 0;
 }
 
-/*
- * Responsiveness
- */
+details[open] {
+	padding: 0 0 2rem;
+	border-bottom: 1px solid var(--border);
+	border-radius: 0;
+}
+
+details > summary {
+	background-color: inherit;
+	list-style: none;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+details > summary small {
+	font-family: system-ui, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+details > summary:hover {
+	text-decoration: none;
+}
+
+/* Content (details) */
+
+details > p > img {
+	border-radius: 0.4rem
+}
+
+/* Footer */
+
+footer {
+	font-family: system-ui, sans-serif;
+}
+
+/* Responsiveness */
 
 @media (max-width: 639px) {
 	.hidden-small {
@@ -52,51 +88,16 @@ details > h3 > small {
 	}
 }
 
-/*
- * Header
- */
+/* Modifier classes */
 
-header {
-	border-bottom: 1px solid var(--border);
+.center {
+	text-align: center;
 }
 
-header > button {
-	float: right;
+.hidden {
+	display: none;
 }
 
-/*
- * Content (as collapsible articles)
- */
-
-details {
-	background-color: inherit;
-	padding: 0;
-}
-
-details[open] {
-	padding: 0 0 2rem;
-}
-
-details>summary {
-	background-color: inherit;
-	list-style: none;
-	font-size: 1.5rem;
-	font-weight: 600;
-}
-
-details>summary small {
-	font-size: 1rem;
-	font-weight: 400;
-}
-
-details>summary:hover {
-	text-decoration: none;
-}
-
-/*
- * Content (details)
- */
-
-details>p>img {
-	border-radius: 0.4rem
+.nowrap {
+	white-space: nowrap;
 }
