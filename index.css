@@ -28,8 +28,9 @@ header {
 	border-bottom: 1px solid var(--border);
 }
 
-header > button {
+header > a {
 	float: right;
+	font-size: 1.5rem;
 }
 
 /* Content (as collapsible articles) */
