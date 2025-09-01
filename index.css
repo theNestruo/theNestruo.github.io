@@ -3,6 +3,7 @@
 @import url('https://fonts.cdnfonts.com/css/literata-book');
 
 body {
+	font-display: swap;
 	font-family: 'Literata Book', serif;
 	font-weight: normal;
 	text-wrap: pretty;
