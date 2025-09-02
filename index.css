@@ -1,9 +1,65 @@
 /* Typography */
 
-@import url('https://fonts.cdnfonts.com/css/literata-book');
+/* @import url('https://fonts.cdnfonts.com/css/literata-book'); */
+@font-face {
+	font-display: swap;
+    font-family: 'Literata Book';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook.woff') format('woff');
+}
+@font-face {
+	font-display: swap;
+    font-family: 'Literata Book';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-Italic.woff') format('woff');
+}
+@font-face {
+	font-display: swap;
+    font-family: 'Literata Book';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-Medium.woff') format('woff');
+}
+@font-face {
+	font-display: swap;
+    font-family: 'Literata Book';
+    font-style: italic;
+    font-weight: 500;
+    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-MediumItalic.woff') format('woff');
+}
+@font-face {
+	font-display: swap;
+    font-family: 'Literata Book';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-Semibold.woff') format('woff');
+}
+@font-face {
+	font-display: swap;
+    font-family: 'Literata Book';
+    font-style: italic;
+    font-weight: 600;
+    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-SemiboldItalic.woff') format('woff');
+}
+@font-face {
+	font-display: swap;
+    font-family: 'Literata Book';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-Bold.woff') format('woff');
+}
+@font-face {
+	font-display: swap;
+    font-family: 'Literata Book';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-BoldItalic.woff') format('woff');
+}
+
 
 body {
-	font-display: swap;
 	font-family: 'Literata Book', serif;
 	font-weight: normal;
 	text-wrap: pretty;
