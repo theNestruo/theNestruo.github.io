@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./index.css">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   </head>
 
   <body>
@@ -35,6 +35,129 @@
     </header>
 
     <br>
+
+    <details>
+      <summary>PCXTOOLS v4.0
+          <small><a id="link-2025-12-09" href="#link-2025-12-09"><i class="bi-share"></i> Dec 9, 2025</a></small>
+      </summary>
+
+      <p><i>PNG2MSX</i>
+        is a free command line tool to convert PNG images to TMS9918 (MSX-1 VDP) format
+				(i.e. CHRTBL/CLRTBL/NAMTBL-ready values).</p>
+      <p>The new version 4.0 features an optimization flag (<code>-o</code>)
+        that attempts to optimize the generated <i>CLRTBL</i> for compression.</p>
+      <p>Where there is one unused color (i.e.: in a solid color line, a line with pattern 0x00 or 0xff),
+        tries to replace that unused color for the CLRTBL byte to match the value of the contiguos bytes,
+        inverting the pattern if necessary.</p>
+      <p>This leads to longer runs of repeated values in the CLRTBL data,
+        and those runs of repeated values usually yield better compression ratios.</p>
+      <p><br>Let&apos;s take a look at some real world data...</p>
+      <p><br>The game <strong>Stevedore</strong> does not have a particularly large amount of graphical data.
+        It has just three charsets: the main charset, a separate partial charset for the title screen,
+        and a separate partial charset for the ending sequence graphics.</p>
+      <p>These resources are about ~8&nbsp;KB of uncompressed raw data,
+        and were compressed to ~4&nbsp;KB using
+        <a href="https://github.com/einar-saukas"><i class="bi-github"></i> Einar Saukas</a>'
+        superb <a href="https://github.com/einar-saukas/ZX0"><i class="bi-github"></i> ZX0</a> compressor.</p>
+      <p>Configuring the toolchain to apply optimization when converting the charsets
+        and compressing the optimized raw binary data, there is a gain of 252 bytes:</p>
+      <table>
+        <thead>
+          <tr>
+            <th><a href="https://github.com/theNestruo/msx-stevedore"><i class="bi-github"></i> Stevedore</a> resources</th>
+            <th>Raw size</th>
+            <th>Compressed<sup>1</sup> size</th>
+            <th>Compressed<sup>1</sup> size<br/>(optimized)</th>
+            <th>Delta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3&Cross; CHRTBL</td>
+            <td class="right">4&nbsp;072&nbsp;B</td>
+            <td class="right">2&nbsp;671&nbsp;B</td>
+            <td class="right">2&nbsp;742&nbsp;B</td>
+            <td class="right">+71&nbsp;B</td>
+          </tr>
+          <tr>
+            <td>3&Cross; CLRTBL</td>
+            <td class="right">4&nbsp;072&nbsp;B</td>
+            <td class="right">1&nbsp;481&nbsp;B</td>
+            <td class="right">1&nbsp;158&nbsp;B</td>
+            <td class="right">-323&nbsp;B</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td class="right">8&nbsp;144&nbsp;B</td>
+            <td class="right">4&nbsp;152&nbsp;B</td>
+            <td class="right">3&nbsp;900&nbsp;B</td>
+            <td class="right"><strong>-252&nbsp;B</strong></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5"><small><sup>1</sup>
+              Using Einar Saukas' ZX0 compressor</small></td>
+          </tr>
+        </tfoot>
+      </table>
+      <p><br>Let's run a similar experiment with <strong>Trucho</strong>.
+        Contrarily to Stevedore, Trucho is charset-heavy. The charset-based graphics of Trucho are split in 25 charset files
+        &mdash;most of them partial&mdash; that weight ~34&nbsp;KB of uncompressed raw data.</p>
+      <p>Fortunately for the coder and the musician, that also wanted to put things inside the 48&nbsp;KB cartridge,
+        graphics were also compressed using ZX0 compressor and ended up taking <em>just</em> ~15&nbsp;KB.</p>
+      <p>Configuring the toolchain to apply optimization when converting the charsets,
+        in this particular case, gives a improvement of 1&nbsp;336 bytes. More than a whole kilobyte!</p>
+      <table>
+        <thead>
+          <tr>
+            <th><a href="https://thenestruo.itch.io/trucho"><i class="bi-controller"></i> Trucho</a> resources</th>
+            <th>Raw size</th>
+            <th>Compressed<sup>2</sup> size</th>
+            <th>Compressed<sup>2</sup> size<br/>(optimized)</th>
+            <th>Delta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>25&Cross; CHRTBL</td>
+            <td class="right">17&nbsp;752&nbsp;B</td>
+            <td class="right">10&nbsp;286&nbsp;B</td>
+            <td class="right">10&nbsp;606&nbsp;B</td>
+            <td class="right">+321&nbsp;B</td>
+          </tr>
+          <tr>
+            <td>25&Cross; CLRTBL</td>
+            <td class="right">17&nbsp;752&nbsp;B</td>
+            <td class="right">5&nbsp;603&nbsp;B</td>
+            <td class="right">3&nbsp;946&nbsp;B</td>
+            <td class="right">-1&nbsp;657&nbsp;B</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td class="right">35&nbsp;504&nbsp;B</td>
+            <td class="right">15&nbsp;889&nbsp;B</td>
+            <td class="right">14&nbsp;552&nbsp;B</td>
+            <td class="right"><strong>-1&nbsp;336&nbsp;B</strong></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5"><small><sup>2</sup>
+              Using Einar Saukas' ZX0 compressor</small></td>
+          </tr>
+        </tfoot>
+      </table>
+      <p><br>Currently, only one optimization algorithm is provided. The gain in CLRTBL compressed sizes
+        already outweighs the loses in CHRTBL compressed sizes, and the benefit is not negligible.
+        But it is probably worth implementing variations in the optimization algorithm
+        (for example: with pattern inversion, to prevent the growth in CHRTBL compressed sizes),
+        so expect a new v4.1 or v5.0 version soon!</p>
+      <p><br>Meanwhile, get the new version and browse the source code at
+        <a href="https://github.com/theNestruo/pcxtools">github.com/theNestruo/pcxtools
+          <i class="bi-github"></i></a></p>
+      <p>Happy pixelarting!!</p>
+    </details>
 
     <details>
       <summary>Z80 Assembly meter v6.0.0
@@ -590,6 +713,9 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
         <a href="https://github.com/theNestruo/pcxtools">github.com/theNestruo/pcxtools
           <i class="bi-github"></i></a></p>
       <p>Happy coding!!</p>
+      <h3>Update
+        <small><a href="#link-2025-12-09">Dec 9, 2025</a></small></h3>
+      <p>Major version 4.0 released</p>
     </details>
 
     <details>
