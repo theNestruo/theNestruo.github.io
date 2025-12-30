@@ -47,7 +47,7 @@
       <p>The new version 4.0 features an optimization flag (<code>-o</code>)
         that attempts to optimize the generated <i>CLRTBL</i> for compression.</p>
       <p>Where there is one unused color (i.e.: in a solid color line, a line with pattern 0x00 or 0xff),
-        tries to replace that unused color for the CLRTBL byte to match the value of the contiguos bytes,
+        tries to replace that unused color for the CLRTBL byte to match the value of the contiguous bytes,
         inverting the pattern if necessary.</p>
       <p>This leads to longer runs of repeated values in the CLRTBL data,
         and those runs of repeated values usually yield better compression ratios.</p>
