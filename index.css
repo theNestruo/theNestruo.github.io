@@ -153,6 +153,10 @@ th {
 
 /* Modifier classes */
 
+.left {
+	text-align: left;
+}
+
 .center {
 	text-align: center;
 }
@@ -167,4 +171,60 @@ th {
 
 .nowrap {
 	white-space: nowrap;
+}
+
+/* Post-specific */
+
+/* .data {
+	font-family:monospace;
+	text-align:center;
+}
+*/
+.precompression-table {
+	table-layout: auto;
+}
+.precompression-table tbody td:has(img) {
+	width: 100%;
+}
+.precompression-table tbody td img {
+	image-rendering: pixelated;
+	width: 100%;
+}
+.precompression-table tbody td {
+	font-family: monospace;
+	text-align: center;
+	vertical-align: middle;
+	padding-block: 0;
+}
+.precompression-table td.color-0 {
+	background: repeating-linear-gradient(-45deg, #000, #000 8px, #444 8px, #444 16px);
+	color: #fff;
+}
+.precompression-table td.color-1 {
+	background-color: #000000;
+	color: #fff;
+}
+.precompression-table td.color-3 {
+	background-color: #5EDC78;
+	color: #000;
+}
+.precompression-table td.color-4 {
+	background-color: #5455ED;
+	color: #fff;
+}
+.precompression-table td.color-5 {
+	background-color: #7D76FC;
+	color: #000;
+}
+.precompression-table td.color-c {
+	background-color: #21B03B;
+	color: #000;
+}
+.precompression-table td.color-f {
+	background-color: #FFFFFF;
+	color: #000;
+}
+.precompression-table td.ignored {
+	background: repeating-linear-gradient(-45deg, #202, #202 4px, #c0c 4px, #c0c 8px);
+	color: #fff;
 }
