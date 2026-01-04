@@ -41,8 +41,8 @@
           <small><a id="link-2026-01-04" href="#link-2026-01-04"><i class="bi-share-fill"></i> Jan 4, 2026</a></small>
       </summary>
 
-      <p>As already hinted in the <a href="#link-2025-12-09">lastest post <i class="bi-link"></i></a> about
-        <a href="https://github.com/theNestruo/pcxtools"><i class="bi-github"></i> github.com/theNestruo/pcxtools</a>,
+      <p>As already hinted in the <a href="#link-2025-12-09">lastest post</a> about
+        <a href="https://github.com/theNestruo/pcxtools">github.com/theNestruo/pcxtools</a>,
         several optimization algorithms to improve charset compression ratios have been implemented and measured.</p>
       <p>As PCXTOOLS are coded in C, and its code is not well-suited to implement those algorithms,
         they have been implemented as a separate command line application instead of embedding them in PCXTOOLS.
@@ -50,7 +50,7 @@
       <p>This way, they can be used with already converted data, or with data created with any other conversion tool.</p>
       <p><br>The lastest post lacked a visual explanation on why this optimizations are possible and how do they work.
         Let&apos;s fix it by using some of the 16x16 tiles of the original freeware version of
-        <a href="http://ninjasenki.com/">Ninja Senki <i class="bi-link"></i></a> (&copy; 2010 Jonathan Lavigne)
+        <a href="https://ninjasenki.com/">Ninja Senki</a> (&copy; 2010 Jonathan Lavigne)
         as an example.</p>
       <p><br>The typical output of <em>PNG2MSX</em> would be as follows:</p>
       <table class="precompression-table">
@@ -150,8 +150,8 @@
         the count of different values in the color table (CLRTBL) and to create longer chunks of repeated values.</p>
       <p>Data with these characteristics is likely to yield better compression ratios
         in either RLE-based compression algorithms or dictionary coders compression algorithms
-        (such as <a href="https://github.com/einar-saukas"><i class="bi-github"></i>  Einar Saukas'</a>
-        <a href="https://github.com/einar-saukas/ZX0"><i class="bi-github"></i> ZX0</a>).</p>
+        (such as <a href="https://github.com/einar-saukas"> Einar Saukas'</a>
+        <a href="https://github.com/einar-saukas/ZX0">ZX0</a>).</p>
       <p>The values of the example output can be modified to the CLRTBL value count is reduced to 4 values
         (just <code>0x14</code> and <code>0x54</code> for the first tile,
         and <code>0x1f</code> and <code>0x3c</code> for the second tile),
@@ -252,7 +252,7 @@
         Also, several merging strategies have been implemented to combine both sets of optimizations.</p>
       <p>Compression ratio improvement will vary depending on the particular charset and the actual compression tool.
         However, to gather sample data, all optimization algorithm combinations have been applied to different charsets,
-        then compressed with Einar Saukas' <a href="https://github.com/einar-saukas/ZX0"><i class="bi-github"></i> ZX0</a>
+        then compressed with Einar Saukas' <a href="https://github.com/einar-saukas/ZX0">ZX0</a>
         compression tool, to determine sensible defaults for the precompression tools to give the best compression ratio
         in most scenarios.</p>
       <p>As expected, color-based optimizations performed better than pattern-based optimizations
@@ -263,18 +263,17 @@
       <p><br>Let's take a look at some real world data, measured on:
       <ul>
         <li>Seven 16x16 tiles of
-          <a href="http://ninjasenki.com/">Ninja Senki <i class="bi-link"></i></a>  (&copy; 2010 Jonathan Lavigne),
+          <a href="https://ninjasenki.com/">Ninja Senki</a>  (&copy; 2010 Jonathan Lavigne),
             that are surprisingly well suited to MSX VDP limitations
-            (see the <a href="https://jlavigne.wordpress.com/2012/01/23/ninja-senki-tile-sets/">Ninja Senki Tile Sets
-            <i class="bi-link"></i></a> at the old <a href="https://jlavigne.wordpress.com/">Jonathan Lavigne blog
-            <i class="bi-link"></i></a>).</li>
+            (see the <a href="https://jlavigne.wordpress.com/2012/01/23/ninja-senki-tile-sets/">Ninja Senki Tile Sets</a>
+            at the old <a href="https://jlavigne.wordpress.com/">Jonathan Lavigne blog</a>).</li>
         <li>Full charsets from public GitHub repositories of MSX games:<ul>
-          <li><a href="https://github.com/theNestruo/msx-pyramidwarpex"><i class="bi-github"></i> Pyramid Warp (1983) - Enhanced plus</a>,</li>
-          <li><a href="https://github.com/theNestruo/msx-stevedore"><i class="bi-github"></i> Stevedore (MSX, 2020)</a>, and</li>
-          <li><a href="https://github.com/theNestruo/msx-youkaiyashiki-patch"><i class="bi-github"></i> Youkai Yashiki (MSX, Casio, 1986) - Graphics patch</a></li>
+          <li><a href="https://github.com/theNestruo/msx-pyramidwarpex">Pyramid Warp (1983) - Enhanced plus</a>,</li>
+          <li><a href="https://github.com/theNestruo/msx-stevedore">Stevedore (MSX, 2020)</a>, and</li>
+          <li><a href="https://github.com/theNestruo/msx-youkaiyashiki-patch">Youkai Yashiki (MSX, Casio, 1986) - Graphics patch</a></li>
         </ul></li>
         <li>Four scenery charsets from
-          <a href="https://thenestruo.itch.io/trucho"><i class="bi-controller"></i> Trucho (MSX, Kamino, 2024)</a>.
+          <a href="https://thenestruo.itch.io/trucho">Trucho (MSX, Kamino, 2024)</a>.
           Namely, the background graphics for the river, the reservoir, the pier, and the secret beach.</li>
         <li>Three scenery charsets from an undisclosed private GitHub repository.</li>
       </ul></p>
@@ -425,8 +424,8 @@
         a size reduction ranging between ~7% and ~11% is interesting enough
         to promote precompression tool usage even in this initial implementation.</p>
       <p><br>Get the precompression tool and browse the source code at
-        <a href="https://github.com/theNestruo/precompression-tools">github.com/theNestruo/precompression-tools
-          <i class="bi-github"></i></a></p>
+        <a href="https://github.com/theNestruo/precompression-tools">
+          github.com/theNestruo/precompression-tools</a></p>
       <p>Happy pixelarting!!</p>
     </details>
 
@@ -451,14 +450,14 @@
         and a separate partial charset for the ending sequence graphics.</p>
       <p>These resources are about ~8&nbsp;KB of uncompressed raw data,
         and were compressed to ~4&nbsp;KB using
-        <a href="https://github.com/einar-saukas"><i class="bi-github"></i> Einar Saukas</a>'
-        superb <a href="https://github.com/einar-saukas/ZX0"><i class="bi-github"></i> ZX0</a> compressor.</p>
+        <a href="https://github.com/einar-saukas">Einar Saukas</a>'
+        superb <a href="https://github.com/einar-saukas/ZX0">ZX0</a> compressor.</p>
       <p>Configuring the toolchain to apply optimization when converting the charsets
         and compressing the optimized raw binary data, there is a gain of 252 bytes:</p>
       <table>
         <thead>
           <tr>
-            <th><a href="https://github.com/theNestruo/msx-stevedore"><i class="bi-github"></i> Stevedore</a> resources</th>
+            <th><a href="https://github.com/theNestruo/msx-stevedore">Stevedore</a> resources</th>
             <th>Raw size</th>
             <th>Compressed<sup>1</sup> size</th>
             <th>Compressed<sup>1</sup> size<br>(optimized)</th>
@@ -505,7 +504,7 @@
       <table>
         <thead>
           <tr>
-            <th><a href="https://thenestruo.itch.io/trucho"><i class="bi-controller"></i> Trucho</a> resources</th>
+            <th><a href="https://thenestruo.itch.io/trucho">Trucho</a> resources</th>
             <th>Raw size</th>
             <th>Compressed<sup>2</sup> size</th>
             <th>Compressed<sup>2</sup> size<br>(optimized)</th>
@@ -548,8 +547,8 @@
         (for example: with pattern inversion, to prevent the growth in CHRTBL compressed sizes),
         so expect a new v4.1 or v5.0 version soon!</p>
       <p><br>Meanwhile, get the new version and browse the source code at
-        <a href="https://github.com/theNestruo/pcxtools">github.com/theNestruo/pcxtools
-          <i class="bi-github"></i></a></p>
+        <a href="https://github.com/theNestruo/pcxtools">
+          github.com/theNestruo/pcxtools</a></p>
       <p>Happy pixelarting!!</p>
     </details>
 
@@ -563,17 +562,14 @@
 				with Inlay Hints (additional information about source code that is rendered inline)
         that show the timing of the execution flow of subroutines (up to the first unconditional exit point),
         and timing of the execution flow up to conditional and unconditional exit points.</p>
-      <p>The extension is also available now in <a href="https://open-vsx.org/">Open VSX Registry
-        <i class="bi-plugin"></i></a> for users of VS Codium (or any other VS Code fork).</p>
+      <p>The extension is also available now in <a href="https://open-vsx.org/">
+        Open VSX Registry</a> for users of VS Codium (or any other VS Code fork).</p>
       <p class="center"><img src="./images/Z80AsmMeter-screenshot.png" loading="lazy"></p>
       <p>Get it here:
-        <a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.z80-asm-meter">Z80 Assembly meter
-          <i class="bi-microsoft"></i></a>, or here:
-        <a href="https://open-vsx.org/extension/theNestruo/z80-asm-meter">Z80 Assembly meter
-          <i class="bi-plugin"></i></a></p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.z80-asm-meter">Z80 Assembly meter</a>,
+        or here: <a href="https://open-vsx.org/extension/theNestruo/z80-asm-meter">Z80 Assembly meter</a></p>
       <p>Browse the source code at
-        <a href="https://github.com/theNestruo/z80-asm-meter-vscode">github.com/theNestruo/z80-asm-meter-vscode
-          <i class="bi-github"></i></a></p>
+        <a href="https://github.com/theNestruo/z80-asm-meter-vscode">github.com/theNestruo/z80-asm-meter-vscode</a></p>
       <p>Happy coding!!</p>
     </details>
 
@@ -584,7 +580,7 @@
 
       <p><i>Desperado (Topo Soft, 1987)</i>, also known as <i>Gunsmoke (Go!, 1987)</i>, was released for ZX Spectrum, Amstrad CPC, and MSX.</p>
       <p>If you listen to the title music
-        (composed by <a href="https://es.wikipedia.org/wiki/C%C3%A9sar_Astudillo_%C2%ABGominolas%C2%BB"><i class="bi-wikipedia"></i> Gominolas</a>)
+        (composed by <a href="https://es.wikipedia.org/wiki/C%C3%A9sar_Astudillo_%C2%ABGominolas%C2%BB">Gominolas</a>)
         of the MSX and the Amstrad CPC versions, you will notice the MSX version is missing one entire channel.</p>
       <p>This can be confirmed using the built-in <i>PSG Toy</i> tool of <i>meisei</i> MSX emulator (by Hap),
         where channel C is continuously displays <code>$000 / 0</code>:</p>
@@ -641,8 +637,8 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <p>A better option is to remove that command <code>$8B</code>, replacing it by the command <code>$87</code>.<br>
         This command <code>$87</code> is used at the beginning of the data of the other two channels,
         and seems to set the &ldquo;instrument&rdquo;, the volume variations that shape a pseudo-envelope.</p>
-      <p>The difference is notable, as you can hear in <a href="https://x.com/araubiMSX"><i class="bi-twitter-x"></i> Araubi</a>'s <a href="https://x.com/araubiMSX/status/1874548246976360811">post in X</a>
-        and <a href="https://bsky.app/profile/araubi.bsky.social"><i class="bi-link"></i> Araubi</a>'s <a href="https://bsky.app/profile/araubi.bsky.social/post/3lepefcuwjs24">post in Bluesky</a>.</p>
+      <p>The difference is notable, as you can hear in <a href="https://x.com/araubiMSX">Araubi</a>'s <a href="https://x.com/araubiMSX/status/1874548246976360811">post in X</a>
+        and <a href="https://bsky.app/profile/araubi.bsky.social">Araubi</a>'s <a href="https://bsky.app/profile/araubi.bsky.social/post/3lepefcuwjs24">post in Bluesky</a>.</p>
       <p>Enjoy!!</p>
     </details>
 
@@ -654,18 +650,17 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <p>Based on
         <a href="https://www.tiny-yarou.com/deepp6.html">previous work</a>
         by
-        <a href="https://twitter.com/tiny_yarou"><i class="bi-twitter"></i>&nbsp;TINY野郎</a>,
+        <a href="https://twitter.com/tiny_yarou">TINY野郎</a>,
 			I have prepared IPS patches for some Namcot MSX games.</p>
       <p>Also, these patches includes the fix of a graphical glitch of
-        <a href="https://www.generation-msx.nl/software/namco/dig-dug/221/"><i>Dig Dug (NAMCOT, 1984)</i></a>
+        <i><a href="https://www.generation-msx.nl/software/namco/dig-dug/221/">Dig Dug (NAMCOT, 1984)</a></i>
         in MSX2 or later that, as far as I know, was known but had never been actually patched.</p>
       <p class="center"><img src="./images/DigDug-Patch-screenshot.png" loading="lazy"></p>
       <p>Get them here:
-        <a href="./files/Namcot - patches.zip" download>Namcot - patches.zip
-          <i class="bi-download"></i></a></p>
+        <a href="./files/Namcot - patches.zip" download><i class="bi-download"></i>&nbsp;Namcot - patches.zip</a></p>
       <p>Browse the source code at
-        <a href="https://github.com/theNestruo/msx-namcot-patch">github.com/theNestruo/msx-namcot-patch
-          <i class="bi-github"></i></a></p>
+        <a href="https://github.com/theNestruo/msx-namcot-patch">
+          github.com/theNestruo/msx-namcot-patch</a></p>
       <p>Happy patching!!</p>
     </details>
 
@@ -678,14 +673,12 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <p>Trucho won
         <a id="link-2024-04-27" href="https://engage.videoapuntes.upv.es/paella/ui/watch.html?id=b44be9f0-fcdd-11ee-9eca-7f2918669f96">Best 8-bit game in the II Edition of the RetroPaella Awards '24</a>
         held at
-        <a href="http://museo.inf.upv.es/retropolis-valencia/">Retrópolis Valencia</a>!</p>
+        <a href="https://museo.inf.upv.es/retropolis-valencia/">Retrópolis Valencia</a>!</p>
       <p class="center"><img src="./images/Trucho-RetroPaellaAwards2024.jpg" loading="lazy"></p>
       <p>Trucho physical cartridges are available at
-        <a href="http://msxcartridgeshop.com">MSX Cartridge Shop
-          <i class="bi-cart"></i></a>
+        <a href="https://msxcartridgeshop.com">MSX Cartridge Shop</a>
         and digital editions are available at
-        <a href="https://thenestruo.itch.io/trucho">thenestruo.itch.io/trucho
-          <i class="bi-controller"></i></a></p>
+        <a href="https://thenestruo.itch.io/trucho">thenestruo.itch.io/trucho</a></p>
       <p>Enjoy!!</p>
     </details>
 
@@ -696,12 +689,10 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 
       <p class="center"><img src="./images/Trucho-packaging.jpg" loading="lazy"></p>
       <p>Physical cartridges available now at
-        <a href="http://msxcartridgeshop.com">MSX Cartridge Shop
-          <i class="bi-cart"></i></a>!</p>
+        <a href="https://msxcartridgeshop.com">MSX Cartridge Shop</a>!</p>
       <p class="center"><img src="./images/Trucho-digital.jpg" loading="lazy"></p>
       <p>Digital editions available now at
-        <a href="https://thenestruo.itch.io/trucho">thenestruo.itch.io/trucho
-          <i class="bi-controller"></i></a></p>
+        <a href="https://thenestruo.itch.io/trucho">thenestruo.itch.io/trucho</a></p>
       <p class="center">
         <iframe frameborder="0" src="https://itch.io/embed/2525858?bg_color=fff&amp;fg_color=222&amp;link_color=0055A0&amp;border_color=d06300" width="208" height="167" class="hidden hidden-dark hidden-large"><a href="https://thenestruo.itch.io/trucho">Trucho (Kamino, 2024) by theNestruo, Errazking</a></iframe>
         <iframe frameborder="0" src="https://itch.io/embed/2525858?bg_color=fff&amp;fg_color=222&amp;link_color=729FCF&amp;border_color=d06300" width="552" height="167" class="hidden hidden-dark hidden-small"><a href="https://thenestruo.itch.io/trucho">Trucho (Kamino, 2024) by theNestruo, Errazking</a></iframe>
@@ -738,11 +729,10 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 				held in Hoznayo (Cantabria, Spain) on April 15th, 2023.</p>
       <p class="center"><img src="./images/run23-screenshot.png" loading="lazy"></p>
       <p>Get the cartridge image here:
-        <a href="./files/run23.zip" download>run23.zip
-          <i class="bi-download"></i></a></p>
+        <a href="./files/run23.zip" download><i class="bi-download"></i>&nbsp;run23.zip</a></p>
       <p>Browse the source code at
         <a href="https://github.com/theNestruo/msx-msxlib/tree/master/games/minigames/run23">github.com/theNestruo/msx-msxlib/tree/master/games/minigames/run23
-          <i class="bi-github"></i></a></p>
+          </a></p>
       <p>Find some friends and have fun!!</p>
     </details>
 
@@ -754,7 +744,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <blockquote>
         <p>&ldquo;Ok, here's all 1008 32x32 female portrait studies done in the MSX palette.<br>
           2 years, 3 months and one day later, it's done.&rdquo;</p>
-        <cite><a href="https://twitter.com/JUSTIN_CYR/status/829196024631681024"><i class="bi-twitter"></i>&nbsp;Justin Cyr &ndash; Feb 8, 2017</a></cite>
+        <cite><a href="https://twitter.com/JUSTIN_CYR/status/829196024631681024">Justin Cyr &ndash; Feb 8, 2017</a></cite>
       </blockquote>
       <p>Justin Cyr used the MSX palette to create 1008 32x32 female portraits.
 				The palette and the resolution made them a very good fit for the multicolor graphic mode
@@ -762,11 +752,11 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 				so I coded a slideshow to learn about MegaROMS and the multicolor graphic mode.</p>
       <p class="center"><img src="./images/JustinCyrFemalePortraits-screenshot.png" loading="lazy"></p>
       <p>Get the cartridge image here:
-        <a href="./files/Justin Cyr's 1008 32x32 female portraits slideshow.zip" download>Justin Cyr's 1008 32x32 female portraits slideshow.zip
-          <i class="bi-download"></i></a></p>
+        <a href="./files/Justin Cyr's 1008 32x32 female portraits slideshow.zip" download>
+          <i class="bi-download"></i>&nbsp;Justin Cyr's 1008 32x32 female portraits slideshow.zip</a></p>
       <p>Browse the source code at
         <a href="https://github.com/theNestruo/msx-justincyr-female-portraits">github.com/theNestruo/msx-justincyr-female-portraits
-          <i class="bi-github"></i></a></p>
+          </a></p>
       <p>Enjoy!!</p>
     </details>
 
@@ -780,8 +770,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
         MSX, also known as
         <i><span class="nowrap">HitBit U</span></i>.
 				The firmware of this computer was previously undumped, so I
-        <a href="./files/Sony_HB-11.zip" download>dumped it
-          <i class="bi-download"></i></a></p>
+        <a href="./files/Sony_HB-11.zip" download><i class="bi-download"></i>&nbsp;dumped it</a></p>
       <p>Beside the well-known features of Kanji-ROM, Japanese Word Processor, and English-Japanese dictionary
 				&mdash;they are written on top of the computer&mdash;, the firmware contains a quite unique feature:
 				the ability to change the system font with the extra BASIC instruction
@@ -891,12 +880,12 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 
       <p><a href="#link-2021-07-08">One year (and a half) ago</a>,
 				the graphical patch for
-        <a href="https://www.generation-msx.nl/software/casio/ghost-house/874/"><i>Youkai Yashiki (CASIO, 1986)</i></a>
+        <i><a href="https://www.generation-msx.nl/software/casio/ghost-house/874/">Youkai Yashiki (CASIO, 1986)</a></i>
         was released,
 				also known as
         <i>Ghost House</i>.<br>
         A friendly reminder of the superb graphics
-        <a href="https://twitter.com/yazioh"><i class="bi-twitter"></i>&nbsp;yazioh</a>
+        <a href="https://twitter.com/yazioh">yazioh</a>
         did:</p>
       <p class="center"><!-- <img src="./images/YoukaiYashiki-GraphicsPatch-screenshot-0.png" loading="lazy"> -->
         <img src="./images/YoukaiYashiki-GraphicsPatch-screenshot-1.png" loading="lazy">
@@ -906,11 +895,11 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
         <img src="./images/YoukaiYashiki-GraphicsPatch-screenshot-5.png" loading="lazy"></p>
       <p>Today, I have finally cleaned up the source code of the patches and uploaded it to GitHub.</p>
       <p>Get the patch here:
-        <a href="./files/Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip" download>Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip
-          <i class="bi-download"></i></a></p>
+        <a href="./files/Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip" download>
+          <i class="bi-download"></i>&nbsp;Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip</a></p>
       <p>Browse the source code at
         <a href="https://github.com/theNestruo/msx-youkaiyashiki-patch">github.com/theNestruo/msx-youkaiyashiki-patch
-          <i class="bi-github"></i></a></p>
+          </a></p>
       <p>Happy patching!!</p>
     </details>
 
@@ -942,8 +931,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
         </ul></p>
       <p class="center"><img src="./images/RecMonoDtCustom-screenshot.png" loading="lazy"></p>
       <p>Get it here:
-        <a href="./files/RecMonoDtCustom-1.085.zip" download>RecMonoDtCustom-1.085.zip
-          <i class="bi-download"></i></a></p>
+        <a href="./files/RecMonoDtCustom-1.085.zip" download><i class="bi-download"></i>&nbsp;RecMonoDtCustom-1.085.zip</a></p>
       <p>Happy coding!!</p>
     </details>
 
@@ -956,18 +944,15 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <p><a href="#link-2020-10-19">Two years ago</a>, Stevedore for MSX was released.<br>
         To celebrate the second anniversary, you can now download the original soundtrack converted to MP3 for your convenience!</p>
       <p>You can now play (and download) for free at
-        <a href="https://thenestruo.itch.io/stevedore">thenestruo.itch.io/stevedore
-          <i class="bi-controller"></i></a></p>
+        <a href="https://thenestruo.itch.io/stevedore">thenestruo.itch.io/stevedore</a></p>
       <p class="center"><iframe src="https://itch.io/embed/1219978?bg_color=fff&amp;fg_color=222&amp;link_color=0091B4&amp;border_color=1daed1" width="208" height="167" frameborder="0" class="hidden hidden-dark hidden-large"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
         <iframe src="https://itch.io/embed/1219978?bg_color=fff&amp;fg_color=222&amp;link_color=0091B4&amp;border_color=1daed1" width="552" height="167" frameborder="0" class="hidden hidden-dark hidden-small"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
         <iframe src="https://itch.io/embed/1219978?bg_color=222&amp;fg_color=eee&amp;link_color=0091B4&amp;border_color=4e4e4e" width="208" height="167" frameborder="0" class="hidden hidden-light hidden-large"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
         <iframe src="https://itch.io/embed/1219978?bg_color=222&amp;fg_color=eee&amp;link_color=0091B4&amp;border_color=4e4e4e" width="552" height="167" frameborder="0" class="hidden hidden-light hidden-small"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe></p>
       <p>Physical cartridges can be acquired at
-        <a href="http://msxcartridgeshop.com">MSX Cartridge Shop
-          <i class="bi-cart"></i></a></p>
+        <a href="https://msxcartridgeshop.com">MSX Cartridge Shop</a></p>
       <p>And you can browse the source code at
-        <a href="https://github.com/theNestruo/msx-stevedore">github.com/theNestruo/msx-stevedore
-          <i class="bi-github"></i></a></p>
+        <a href="https://github.com/theNestruo/msx-stevedore">github.com/theNestruo/msx-stevedore</a></p>
       <p>Have fun!!</p>
     </details>
 
@@ -978,14 +963,14 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 
       <p>Stevedore password system was cracked by MSX user Briqunullus on Jan 16, 2021, and then I shared the
         <a href="https://gist.github.com/theNestruo/041e97024f3e2ef558f71e0eea531a52">password generator
-          <i class="bi-github"></i></a>
+          </a>
         I used during the development process as a
         <a href="https://gist.github.com/">GitHub Gist
-          <i class="bi-github"></i></a>.</p>
+          </a>.</p>
       <p>Today, I was talking with
-        <a href="http://www.msxarea.com/editorial_esp.html">MSX AREA</a>
+        <a href="https://www.msxarea.com/editorial_esp.html">MSX AREA</a>
         editor
-        <a href="https://twitter.com/MSX_AREA"><i class="bi-twitter"></i>&nbsp;Juanmi Ortu&ntilde;o</a>
+        <a href="https://twitter.com/MSX_AREA">Juanmi Ortu&ntilde;o</a>
         about Stevedore,
 				then I remembered the password generator was not available online.</p>
       <p>So here it is:</p>
@@ -1059,18 +1044,16 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <p>Happy birthday, Stevedore!</p>
       <p><a href="#2020-10-19">One year ago</a>, Stevedore for MSX was released.<br>
         To celebrate the first anniversary, you can now play (and download) for free at
-        <a href="https://thenestruo.itch.io/stevedore">thenestruo.itch.io/stevedore
-          <i class="bi-controller"></i></a></p>
+        <a href="https://thenestruo.itch.io/stevedore">thenestruo.itch.io/stevedore</a></p>
       <p class="center"><iframe src="https://itch.io/embed/1219978?bg_color=fff&amp;fg_color=222&amp;link_color=0091B4&amp;border_color=1daed1" width="208" height="167" frameborder="0" class="hidden hidden-dark hidden-large"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
         <iframe src="https://itch.io/embed/1219978?bg_color=fff&amp;fg_color=222&amp;link_color=0091B4&amp;border_color=1daed1" width="552" height="167" frameborder="0" class="hidden hidden-dark hidden-small"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
         <iframe src="https://itch.io/embed/1219978?bg_color=222&amp;fg_color=eee&amp;link_color=0091B4&amp;border_color=4e4e4e" width="208" height="167" frameborder="0" class="hidden hidden-light hidden-large"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe>
         <iframe src="https://itch.io/embed/1219978?bg_color=222&amp;fg_color=eee&amp;link_color=0091B4&amp;border_color=4e4e4e" width="552" height="167" frameborder="0" class="hidden hidden-light hidden-small"><a href="https://thenestruo.itch.io/stevedore">Stevedore (MSX, 2020) by theNestruo</a></iframe></p>
       <p>Physical cartridges can be acquired at
-        <a href="http://msxcartridgeshop.com">MSX Cartridge Shop
-          <i class="bi-cart"></i></a></p>
+        <a href="https://msxcartridgeshop.com">MSX Cartridge Shop</a></p>
       <p>And you can browse the source code at
         <a href="https://github.com/theNestruo/msx-stevedore">github.com/theNestruo/msx-stevedore
-          <i class="bi-github"></i></a></p>
+          </a></p>
       <p>Have fun!!</p>
       <h3>Update
         <small><a href="#link-2022-10-18">Oct 18, 2022</a></small></h3>
@@ -1082,8 +1065,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
         after loading a save state.<br>
         If you replace you .exe with BlueMSX 2.9.0, save states will work as intended.<br>
         Get the Blue MSX 2.9.0 compiled executable here:
-        <a href="https://github.com/ducasp/blueMSX/tree/master/Compiled%20Executable/Release">github.com/ducasp/blueMSX
-          <i class="bi-github"></i></a></p>
+        <a href="https://github.com/ducasp/blueMSX/tree/master/Compiled%20Executable/Release">github.com/ducasp/blueMSX</a></p>
     </details>
 
     <details>
@@ -1105,7 +1087,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
         <i>(PiCture eXchange)</i>.</p>
       <p>Get them and browse the source code at
         <a href="https://github.com/theNestruo/pcxtools">github.com/theNestruo/pcxtools
-          <i class="bi-github"></i></a></p>
+          </a></p>
       <p>Happy coding!!</p>
       <h3>Update
         <small><a href="#link-2025-12-09">Dec 9, 2025</a></small></h3>
@@ -1119,9 +1101,9 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 
       <p><a href="https://twitter.com/yazioh/status/1402255582363414534">One month ago</a>,
 				these superb graphics by
-        <a href="https://twitter.com/yazioh"><i class="bi-twitter"></i>&nbsp;yazioh</a>
+        <a href="https://twitter.com/yazioh">yazioh</a>
         were just a mock-up of
-        <a href="https://www.generation-msx.nl/software/casio/ghost-house/874/"><i>Youkai Yashiki (CASIO, 1986)</i></a>,
+        <i><a href="https://www.generation-msx.nl/software/casio/ghost-house/874/">Youkai Yashiki (CASIO, 1986)</a>,
 				also known as
         <i>Ghost House</i>, for MSX.</p>
       <p class="center"><img src="./images/YoukaiYashiki-mockup.png" loading="lazy"></p>
@@ -1138,8 +1120,8 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
         </ul></p>
       <p>Additionally, a minipatch is provided for those who want to play with enhancements but using the original graphics.</p>
       <p>Get it here:
-        <a href="./files/Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip" download>Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip
-          <i class="bi-download"></i></a></p>
+        <a href="./files/Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip" download>
+          <i class="bi-download"></i>&nbsp;Youkai Yashiki - Graphics patch v1.1 (Yazioh & Nestruo, 2021-07-12).zip</a></p>
       <p>Enjoy!!</p>
     </details>
 
@@ -1149,23 +1131,23 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       </summary>
 
       <p>Can you spot the differences between the original MSX
-        <a href="https://www.generation-msx.nl/software/tesoft/pyramid-warp/64/"><i>Pyramid Warp (T&E soft, 1983)</i></a>
+        <i><a href="https://www.generation-msx.nl/software/tesoft/pyramid-warp/64/">Pyramid Warp (T&E soft, 1983)</a>
         and the Enhanced+ version?</p>
       <p class="center"><img src="./images/PyramidWarp-screenshot-0.png" loading="lazy">
         <img src="./images/PyramidWarp-screenshot-1.png" loading="lazy"><br>
         <img src="./images/PyramidWarpEX-screenshot-0.png" loading="lazy">
         <img src="./images/PyramidWarpEX-screenshot-1.png" loading="lazy"></p>
       <p>With music by
-        <a href="https://twitter.com/bitcaffe"><i class="bi-twitter"></i>&nbsp;bitcaffe</a>
+        <a href="https://twitter.com/bitcaffe">bitcaffe</a>
         and graphics by
-        <a href="https://twitter.com/nenefranz"><i class="bi-twitter"></i>&nbsp;nenefranz</a></p>
+        <a href="https://twitter.com/nenefranz">nenefranz</a></p>
       <p>Get it here:
-        <a href="https://github.com/theNestruo/msx-pyramidwarpex/releases/download/1.1/PyramidWarp.enhancedplus.rom">PyramidWarp.enhancedplus.rom
-          <i class="bi-download"></i></a></p>
+        <a href="https://github.com/theNestruo/msx-pyramidwarpex/releases/download/1.1/PyramidWarp.enhancedplus.rom">
+          <i class="bi-download"></i>&nbsp;PyramidWarp.enhancedplus.rom</a></p>
       <p>Browse the source code, including an annotated disassembly of the original
         <i>Pyramid Warp (T&E soft, 1983)</i>, at
         <a href="https://github.com/theNestruo/msx-pyramidwarpex">github.com/theNestruo/msx-pyramidwarpex
-          <i class="bi-github"></i></a></p>
+          </a></p>
       <p>Enjoy!!</p>
     </details>
 
@@ -1177,11 +1159,9 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <p>Simple dark themes, based on the default Dark (Visual Studio) theme but with less syntax highlight.</p>
       <p class="center"><img src="./images/Dark--screenshot.png" loading="lazy"></p>
       <p>Get them here:
-        <a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.dark-minus-theme">Dark-
-          <i class="bi-microsoft"></i></a></p>
+        <a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.dark-minus-theme">Dark-</a></p>
       <p>Browse the source code at
-        <a href="https://github.com/theNestruo/dark-minus-theme-vscode">github.com/theNestruo/dark-minus-theme-vscode
-          <i class="bi-github"></i></a></p>
+        <a href="https://github.com/theNestruo/dark-minus-theme-vscode">github.com/theNestruo/dark-minus-theme-vscode</a></p>
       <p>Happy coding!!</p>
     </details>
 
@@ -1192,12 +1172,13 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 
       <p class="center"><img src="./images/Stevedore-packaging.jpg" loading="lazy"></p>
       <p>Available now at
-        <a href="http://msxcartridgeshop.com">MSX Cartridge Shop
-          <i class="bi-cart"></i></a>!</p>
-          <h3>Update
-            <small><a href="#link-2021-10-18">Oct 18, 2021</a></small></h3>
-          <p>You can now play (and download) for free</p>
-          <h3>Update
+        <a href="https://msxcartridgeshop.com">MSX Cartridge Shop</a>!</p>
+
+      <h3>Update
+        <small><a href="#link-2021-10-18">Oct 18, 2021</a></small></h3>
+      <p>You can now play (and download) for free</p>
+
+      <h3>Update
         <small><a href="#link-2022-10-18">Oct 18, 2022</a></small></h3>
       <p>You can now download the original soundtrack</p>
     </details>
@@ -1209,15 +1190,19 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 
       <p>The Z80 Assembly meter extension for Visual Studio Code reaches version 1.0.0
 				and gains support for Z80N (ZX Spectrum Next Extended Z80 instruction set).</p>
+
       <h3>Update
         <small><a href="#link-2021-11-18">Nov 18, 2021</a></small></h3>
       <p>Major version 2.0.0 released</p>
+
       <h3>Update
         <small><a href="#link-2022-02-19">Feb 19, 2022</a></small></h3>
       <p>Major version 3.0.0 released</p>
+
       <h3>Update
         <small><a href="#link-2023-08-17">Aug 17, 2023</a></small></h3>
       <p>Major version 4.0.0 released</p>
+
       <h3>Update
         <small><a href="#link-2025-07-02">Jul 2, 2025</a></small></h3>
       <p>Major version 6.0.0 released</p>
@@ -1258,8 +1243,8 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <p class="center"><img src="./images/PerezTheMouse-screenshot-4.png" loading="lazy">
         <img src="./images/PerezTheMouse-screenshot-5.png" loading="lazy"></p>
       <p>Get it here:
-        <a href="./files/Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip" download>Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip
-          <i class="bi-download"></i></a></p>
+        <a href="./files/Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip" download>
+          <i class="bi-download"></i>&nbsp;Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip</a></p>
       <p>Have fun!!</p>
     </details>
 
@@ -1277,8 +1262,8 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
         <img src="./images/PerezTheMouse-screenshot-3.png" loading="lazy"></p>
       <p>With music by Wonder</p>
       <p>Get it here:
-        <a href="./files/Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip" download>Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip
-          <i class="bi-download"></i></a></p>
+        <a href="./files/Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip" download>
+          <i class="bi-download"></i>&nbsp;Perez the Mouse v1.1 (theNestruo & Wonder, 2011-12-09).zip</a></p>
       <p>Enjoy!!</p>
       <h3>Update
         <small><a href="https://www.msxblog.es/concurso-msx-basic-2011-perez-the-mouse-v1-1/">Dec 13</a></small></h3>
@@ -1289,12 +1274,12 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
     </details>
 
     <footer>
-      <p><a href="https://github.com/theNestruo"><i class="bi-github"></i> github.com/theNestruo</a></p>
-      <p><a href="https://thenestruo.itch.io/"><i class="bi-controller"></i> theNestruo.itch.io</a></p>
-      <p><a href="https://marketplace.visualstudio.com/publishers/theNestruo"><i class="bi-microsoft"></i> marketplace.visualstudio.com/publishers/theNestruo</a></p>
+      <p><a href="https://github.com/theNestruo">github.com/theNestruo</a></p>
+      <p><a href="https://thenestruo.itch.io/">theNestruo.itch.io</a></p>
+      <p><a href="https://marketplace.visualstudio.com/publishers/theNestruo">marketplace.visualstudio.com/publishers/theNestruo</a></p>
       <p>Made with <a href="https://watercss.kognise.dev/">Water.css <i class="bi-filetype-css"></i></a>
         and <a href="https://icons.getbootstrap.com/">Bootstrap Icons <i class="bi-bootstrap"></i></a><br>
-        Hosted in <a href="https://pages.github.com/">GitHub pages <i class="bi-github"></i></a></p>
+        Hosted in <a href="https://pages.github.com/">GitHub pages </a></p>
     </footer>
 
     <script src="./index.js" defer></script>

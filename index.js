@@ -17,6 +17,28 @@ function updateThemeVisibility(dark) {
 	return true;
 }
 
+function decorateLinks() {
+	const biByDomain = {
+		"bsky.app": "bluesky",
+		"github.com": "github",
+		"gist.github.com": "github",
+		"thenestruo.itch.io": "controller",
+		"marketplace.visualstudio.com": "microsoft",
+		"msxcartridgeshop.com": "cart",
+		"open-vsx.org": "plugin",
+		"twitter.com": "twitter",
+		"es.wikipedia.org": "wikipedia",
+		"x.com": "twitter-x",
+	};
+
+	for (const a of document.querySelectorAll("details a:not(:has(i))")) {
+		if (a.href.startsWith("https://")) {
+			const bi = biByDomain[a.href.substring(8, a.href.indexOf("/", 9))] ?? "link-45deg";
+			a.innerHTML = `<i class="bi-${bi}"></i> ${a.innerHTML}`;
+		}
+	}
+}
+
 function openDetailsForLocation(location) {
 	if (location?.hash) {
 		document.querySelector(`details:has(a${location.hash})`)?.setAttribute("open", true);
@@ -25,4 +47,5 @@ function openDetailsForLocation(location) {
 
 const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
 updateThemeVisibility(isDarkPreferred);
+decorateLinks();
 openDetailsForLocation(document.location);
