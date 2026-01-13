@@ -134,6 +134,10 @@ details > summary:hover {
 	}
 }
 
+details > q + p {
+	margin-top: 1.5rem;
+}
+
 details > p > img {
 	border-radius: 0.4rem
 }
