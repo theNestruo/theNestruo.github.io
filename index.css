@@ -87,7 +87,7 @@ header {
 
 header > a {
 	float: right;
-	font-size: 1.5rem;
+	font-size: calc(1rem * 5 / 3);
 }
 
 /* Content (as collapsible articles) */
@@ -106,7 +106,7 @@ details[open] {
 details > summary {
 	background-color: inherit;
 	list-style: none;
-	font-size: 1.5rem;
+	font-size: calc(1rem * 5 / 3);
 	font-weight: 600;
 }
 
@@ -122,33 +122,30 @@ details > summary:hover {
 
 /* Content (details) */
 
+@media (max-width: 639px) {
+	details > p {
+		text-align: left;
+	}
+}
+
+@media (min-width: 640px) {
+	details > p {
+		text-align: justify;
+	}
+}
+
 details > p > img {
 	border-radius: 0.4rem
+}
+
+th {
+	vertical-align: bottom;
 }
 
 /* Footer */
 
 footer {
 	font-family: system-ui, sans-serif;
-}
-
-/* Tables */
-th {
-	vertical-align: bottom;
-}
-
-/* Responsiveness */
-
-@media (max-width: 639px) {
-	.hidden-small {
-		display: none;
-	}
-}
-
-@media (min-width: 640px) {
-	.hidden-large {
-		display: none;
-	}
 }
 
 /* Modifier classes */
@@ -173,13 +170,22 @@ th {
 	white-space: nowrap;
 }
 
-/* Post-specific */
+/* Responsiveness */
 
-/* .data {
-	font-family:monospace;
-	text-align:center;
+@media (max-width: 639px) {
+	.hidden-small {
+		display: none;
+	}
 }
-*/
+
+@media (min-width: 640px) {
+	.hidden-large {
+		display: none;
+	}
+}
+
+/* Post-specific: "Precompression tools - Jan 4, 2026" */
+
 .precompression-table {
 	table-layout: auto;
 }
