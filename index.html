@@ -37,6 +37,24 @@
     <br>
 
     <details>
+      <summary>An unpdate on PCXTOOLS and precompression tools
+          <small><a id="link-2026-01-18" href="#link-2026-01-18"><i class="bi-share-fill"></i> Jan 18, 2026</a></small>
+      </summary>
+
+      <p>It seems that I just reinvented the wheel.</p>
+      <p>Trying to apply the precompression tool on some particular test sets yield no compression improvement.
+        Actually, the precompression tool did not change a single byte in the data because it was already optimal.</p>
+      <p><br>The data of these test sets were generated from PNG images using
+        <a href="https://github.com/mvac7">aOrante</a>'s
+        <a href="https://github.com/mvac7/MSXTILESdevtool">MSXTiles&middot;devtool</a>.</p>
+      <p>I have yet to study its code, but it looks like it is using a simpler (and clever) approach
+        for choosing the foreground/background colors that produces already optimal data.</p>
+      <p><br>It seems that PCXTOOLS were doing a lousy job at the same task all the time!
+        It's time to learn from the masters and fix it once and for all!</p>
+      <p><br>Kudos to aOrante!!</p>
+    </details>
+
+    <details>
       <summary>Precompression tools
           <small><a id="link-2026-01-04" href="#link-2026-01-04"><i class="bi-share-fill"></i> Jan 4, 2026</a></small>
       </summary>
@@ -150,7 +168,7 @@
         the count of different values in the color table (CLRTBL) and to create longer chunks of repeated values.</p>
       <p>Data with these characteristics is likely to yield better compression ratios
         in either RLE-based compression algorithms or dictionary coders compression algorithms
-        (such as <a href="https://github.com/einar-saukas"> Einar Saukas'</a>
+        (such as <a href="https://github.com/einar-saukas">Einar Saukas'</a>
         <a href="https://github.com/einar-saukas/ZX0">ZX0</a>).</p>
       <p>The values of the example output can be modified to the CLRTBL value count is reduced to 4 values
         (just <code>0x14</code> and <code>0x54</code> for the first tile,
