@@ -45,12 +45,12 @@
       <p>Trying to apply the precompression tool on some particular test sets yield no compression improvement.
         Actually, the precompression tool did not change a single byte in the data because it was already optimal.</p>
       <p><br>The data of these test sets were generated from PNG images using
-        <a href="https://github.com/mvac7">aOrante</a>'s
+        <a href="https://github.com/mvac7">aOrante</a>&apos;s
         <a href="https://github.com/mvac7/MSXTILESdevtool">MSXTiles&middot;devtool</a>.</p>
       <p>I have yet to study its code, but it looks like it is using a simpler (and clever) approach
         for choosing the foreground/background colors that produces already optimal data.</p>
       <p><br>It seems that PCXTOOLS were doing a lousy job at the same task all the time!
-        It's time to learn from the masters and fix it once and for all!</p>
+        It&apos;s time to learn from the masters and fix it once and for all!</p>
       <p><br>Kudos to aOrante!!</p>
     </details>
 
@@ -168,7 +168,7 @@
         the count of different values in the color table (CLRTBL) and to create longer chunks of repeated values.</p>
       <p>Data with these characteristics is likely to yield better compression ratios
         in either RLE-based compression algorithms or dictionary coders compression algorithms
-        (such as <a href="https://github.com/einar-saukas">Einar Saukas'</a>
+        (such as <a href="https://github.com/einar-saukas">Einar Saukas&apos;</a>
         <a href="https://github.com/einar-saukas/ZX0">ZX0</a>).</p>
       <p>The values of the example output can be modified to the CLRTBL value count is reduced to 4 values
         (just <code>0x14</code> and <code>0x54</code> for the first tile,
@@ -270,7 +270,7 @@
         Also, several merging strategies have been implemented to combine both sets of optimizations.</p>
       <p>Compression ratio improvement will vary depending on the particular charset and the actual compression tool.
         However, to gather sample data, all optimization algorithm combinations have been applied to different charsets,
-        then compressed with Einar Saukas' <a href="https://github.com/einar-saukas/ZX0">ZX0</a>
+        then compressed with Einar Saukas&apos; <a href="https://github.com/einar-saukas/ZX0">ZX0</a>
         compression tool, to determine sensible defaults for the precompression tools to give the best compression ratio
         in most scenarios.</p>
       <p>As expected, color-based optimizations performed better than pattern-based optimizations
@@ -278,7 +278,7 @@
         with pattern-based optimizations did usually performed worse that entirely ignoring pattern-based optimizations.</p>
       <p>As a result, the default configuration simply applies color-based optimizations,
         but allows this color-based optimizations to reverse the pattern if necessary.</p>
-      <p><br>Let's take a look at some real world data, measured on:
+      <p><br>Let&apos;s take a look at some real world data, measured on:
       <ul>
         <li>Seven 16x16 tiles of
           <a href="https://ninjasenki.com/">Ninja Senki</a>  (&copy; 2010 Jonathan Lavigne),
@@ -430,7 +430,7 @@
         <tfoot>
           <tr>
             <td colspan=6>
-              <small><sup>1</sup>Using Einar Saukas' ZX0 compressor</small>
+              <small><sup>1</sup>Using Einar Saukas&apos; ZX0 compressor</small>
               <br><small><sup>2</sup>Using PNG2MSX without any configuration flag</small>
               <br><small><sup>3</sup>Using PNG2MSX with the optimization flag (<code>-o</code>) only</small>
             </td>
@@ -468,7 +468,7 @@
         and a separate partial charset for the ending sequence graphics.</p>
       <p>These resources are about ~8&nbsp;KB of uncompressed raw data,
         and were compressed to ~4&nbsp;KB using
-        <a href="https://github.com/einar-saukas">Einar Saukas</a>'
+        <a href="https://github.com/einar-saukas">Einar Saukas</a>&apos;
         superb <a href="https://github.com/einar-saukas/ZX0">ZX0</a> compressor.</p>
       <p>Configuring the toolchain to apply optimization when converting the charsets
         and compressing the optimized raw binary data, there is a gain of 252 bytes:</p>
@@ -508,11 +508,11 @@
         <tfoot>
           <tr>
             <td colspan="5"><small><sup>1</sup>
-              Using Einar Saukas' ZX0 compressor</small></td>
+              Using Einar Saukas&apos; ZX0 compressor</small></td>
           </tr>
         </tfoot>
       </table>
-      <p><br>Let's run a similar experiment with <strong>Trucho</strong>.
+      <p><br>Let&apos;s run a similar experiment with <strong>Trucho</strong>.
         Contrarily to Stevedore, Trucho is charset-heavy. The charset-based graphics of Trucho are split in 25 charset files
         &mdash;most of them partial&mdash; that weight ~34&nbsp;KB of uncompressed raw data.</p>
       <p>Fortunately for the coder and the musician, that also wanted to put things inside the 48&nbsp;KB cartridge,
@@ -555,7 +555,7 @@
         <tfoot>
           <tr>
             <td colspan="5"><small><sup>2</sup>
-              Using Einar Saukas' ZX0 compressor</small></td>
+              Using Einar Saukas&apos; ZX0 compressor</small></td>
           </tr>
         </tfoot>
       </table>
@@ -575,7 +575,7 @@
           <small><a id="link-2025-07-02" href="#link-2025-07-02"><i class="bi-share-fill"></i> Jul 2, 2025</a></small>
       </summary>
 
-      <q>Font ligatures!? Where we're going we don't need font ligatures!!</q>
+      <q>Font ligatures!? Where we&apos;re going we don&apos;t need font ligatures!!</q>
       <p>The Z80 Assembly meter extension for Visual Studio Code reaches version 6.0.0
 				with Inlay Hints (additional information about source code that is rendered inline)
         that show the timing of the execution flow of subroutines (up to the first unconditional exit point),
@@ -605,7 +605,7 @@
       <p class="center"><img src="./images/Desperado-PsgToy-0.png" loading="lazy"></p>
       <p>Does this happen by a bug of the replayer code?<br>
         Has it been deliberately cut to save space?<br>
-        Let's find out&hellip;</p>
+        Let&apos;s find out&hellip;</p>
       <p><br>The following fragment of code initializes the music in the buffers used by the replayer:</p>
       <pre>
 LA886:  ; ...
@@ -655,8 +655,8 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <p>A better option is to remove that command <code>$8B</code>, replacing it by the command <code>$87</code>.<br>
         This command <code>$87</code> is used at the beginning of the data of the other two channels,
         and seems to set the &ldquo;instrument&rdquo;, the volume variations that shape a pseudo-envelope.</p>
-      <p>The difference is notable, as you can hear in <a href="https://x.com/araubiMSX">Araubi</a>'s <a href="https://x.com/araubiMSX/status/1874548246976360811">post in X</a>
-        and <a href="https://bsky.app/profile/araubi.bsky.social">Araubi</a>'s <a href="https://bsky.app/profile/araubi.bsky.social/post/3lepefcuwjs24">post in Bluesky</a>.</p>
+      <p>The difference is notable, as you can hear in <a href="https://x.com/araubiMSX">Araubi</a>&apos;s <a href="https://x.com/araubiMSX/status/1874548246976360811">post in X</a>
+        and <a href="https://bsky.app/profile/araubi.bsky.social">Araubi</a>&apos;s <a href="https://bsky.app/profile/araubi.bsky.social/post/3lepefcuwjs24">post in Bluesky</a>.</p>
       <p>Enjoy!!</p>
     </details>
 
@@ -689,7 +689,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 
       <p>Congratulations, Trucho!</p>
       <p>Trucho won
-        <a id="link-2024-04-27" href="https://engage.videoapuntes.upv.es/paella/ui/watch.html?id=b44be9f0-fcdd-11ee-9eca-7f2918669f96">Best 8-bit game in the II Edition of the RetroPaella Awards '24</a>
+        <a id="link-2024-04-27" href="https://engage.videoapuntes.upv.es/paella/ui/watch.html?id=b44be9f0-fcdd-11ee-9eca-7f2918669f96">Best 8-bit game in the II Edition of the RetroPaella Awards &apos;24</a>
         held at
         <a href="https://museo.inf.upv.es/retropolis-valencia/">Retrópolis Valencia</a>!</p>
       <p class="center"><img src="./images/Trucho-RetroPaellaAwards2024.jpg" loading="lazy"></p>
@@ -725,7 +725,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
           <small><a id="link-2023-08-17" href="#link-2023-08-17"><i class="bi-share-fill"></i> Aug 17, 2023</a></small>
       </summary>
 
-      <q>Font ligatures!? Where we're going we don't need font ligatures!!</q>
+      <q>Font ligatures!? Where we&apos;re going we don&apos;t need font ligatures!!</q>
       <p>The Z80 Assembly meter extension for Visual Studio Code reaches version 4.0.0
 				with huge performance improvements and supporting:
 				NEC PC-8000 series, Sjasm and SjASMPlus repeat count,
@@ -737,12 +737,12 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
     </details>
 
     <details>
-      <summary>RUN'23 minigame
+      <summary>RUN&apos;23 minigame
           <small><a id="link-2023-04-15" href="#link-2023-04-15"><i class="bi-share-fill"></i> Apr 15, 2023</a></small>
       </summary>
 
       <p>A mini-game for four players in one MSX.</p>
-      <p>Coded in two evenings for the RUN'23
+      <p>Coded in two evenings for the RUN&apos;23
 				(&ldquo;Reunión de Usuarios de MSX del Norte&rdquo;)
 				held in Hoznayo (Cantabria, Spain) on April 15th, 2023.</p>
       <p class="center"><img src="./images/run23-screenshot.png" loading="lazy"></p>
@@ -755,13 +755,13 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
     </details>
 
     <details>
-      <summary>MSX slideshow of Justin Cyr's &ldquo;1008 32x32 female portrait studies done in the MSX palette&rdquo;
+      <summary>MSX slideshow of Justin Cyr&apos;s &ldquo;1008 32x32 female portrait studies done in the MSX palette&rdquo;
           <small><a id="link-2023-01-26" href="#link-2023-01-26"><i class="bi-share-fill"></i> Jan 26, 2023</a></small>
       </summary>
 
       <blockquote>
-        <p>&ldquo;Ok, here's all 1008 32x32 female portrait studies done in the MSX palette.<br>
-          2 years, 3 months and one day later, it's done.&rdquo;</p>
+        <p>&ldquo;Ok, here&apos;s all 1008 32x32 female portrait studies done in the MSX palette.<br>
+          2 years, 3 months and one day later, it&apos;s done.&rdquo;</p>
         <cite><a href="https://twitter.com/JUSTIN_CYR/status/829196024631681024">Justin Cyr &ndash; Feb 8, 2017</a></cite>
       </blockquote>
       <p>Justin Cyr used the MSX palette to create 1008 32x32 female portraits.
@@ -770,8 +770,8 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
 				so I coded a slideshow to learn about MegaROMS and the multicolor graphic mode.</p>
       <p class="center"><img src="./images/JustinCyrFemalePortraits-screenshot.png" loading="lazy"></p>
       <p>Get the cartridge image here:
-        <a href="./files/Justin Cyr's 1008 32x32 female portraits slideshow.zip" download>
-          <i class="bi-download"></i>&nbsp;Justin Cyr's 1008 32x32 female portraits slideshow.zip</a></p>
+        <a href="./files/Justin Cyr&apos;s 1008 32x32 female portraits slideshow.zip" download>
+          <i class="bi-download"></i>&nbsp;Justin Cyr&apos;s 1008 32x32 female portraits slideshow.zip</a></p>
       <p>Browse the source code at
         <a href="https://github.com/theNestruo/msx-justincyr-female-portraits">github.com/theNestruo/msx-justincyr-female-portraits
           </a></p>
@@ -819,7 +819,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
             <span class="nowrap">HB-F1II</span>
             (<code>POKE &HF91F,&H8B:POKE &HF920,&HDB:POKE &HF921,&H54</code>).</li>
         </ul></p>
-      <p>Now, let's take a look at all these fonts in one single image:</p>
+      <p>Now, let&apos;s take a look at all these fonts in one single image:</p>
       <p class="center"><a href="./images/SonyHitBit-fonts.png"><img src="./images/SonyHitBit-fonts.png" loading="lazy"></a></p>
 
       <p><br>Regarding the kanji/kana part of the character set, it is curious that, despite the
@@ -1257,7 +1257,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       <p>Congratulations, P&eacute;rez the Mouse!</p>
       <p>P&eacute;rez the Mouse
         <a id="link-2012-02-05" href="https://www.msxblog.es/concurso-msx-basic-2011-resultados-finales/">won first place in the MSX-BASIC Contest 2011</a>!</p>
-      <p>Let's celebrate by revealing a little secret... Did you know there is an hidden jukebox in the cassette?</p>
+      <p>Let&apos;s celebrate by revealing a little secret... Did you know there is an hidden jukebox in the cassette?</p>
       <p class="center"><img src="./images/PerezTheMouse-screenshot-4.png" loading="lazy">
         <img src="./images/PerezTheMouse-screenshot-5.png" loading="lazy"></p>
       <p>Get it here:
@@ -1272,7 +1272,7 @@ L84BB:  dw      L8202   ; Subroutine for command: $80
       </summary>
 
       <p>P&eacute;rez the Mouse presented to
-        <a href="https://www.msxblog.es/">MSXBlog</a>'s
+        <a href="https://www.msxblog.es/">MSXBlog</a>&apos;s
         <a href="https://www.msxblog.es/category/concurso-msx-basic-2011/">MSX-BASIC Contest 2011</a>!</p>
       <p class="center"><img src="./images/PerezTheMouse-screenshot-0.png" loading="lazy">
         <img src="./images/PerezTheMouse-screenshot-1.png" loading="lazy"><br>
