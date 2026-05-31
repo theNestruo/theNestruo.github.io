@@ -39,6 +39,24 @@ function decorateLinks() {
 	}
 }
 
+function decorateImages() {
+	for (const img of document.querySelectorAll("details p img")) {
+		img.outerHTML = `<a href="${img.src}" target="_blank" onclick="return onImageClick(this);">${img.outerHTML}</a>`;
+	}
+}
+
+function onImageClick(a) {
+	const img = a.querySelector("img");
+	dialogImage.innerHTML = `<img src="${img.src}" onclick="return onDialogImageClick(this);">`;
+	dialogImage.showModal();
+	return false;
+}
+
+function onDialogImageClick(_img) {
+	dialogImage.close();
+	return false;
+}
+
 function openDetailsForLocation(location) {
 	if (location?.hash) {
 		document.querySelector(`details:has(a${location.hash})`)?.setAttribute("open", true);
@@ -48,4 +66,5 @@ function openDetailsForLocation(location) {
 const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
 updateThemeVisibility(isDarkPreferred);
 decorateLinks();
+decorateImages();
 openDetailsForLocation(document.location);

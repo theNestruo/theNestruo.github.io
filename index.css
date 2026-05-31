@@ -138,7 +138,8 @@ details > q + p {
 	margin-top: 1.5rem;
 }
 
-details > p > img {
+details > p > img,
+details > p > a > img {
 	border-radius: 0.4rem
 }
 
