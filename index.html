@@ -37,7 +37,29 @@
     <br>
 
     <details>
-      <summary>An unpdate on PCXTOOLS and precompression tools
+      <summary>Another update on PCXTOOLS and precompression tools
+          <small><a id="link-2026-05-31" href="#link-2026-05-31"><i class="bi-share-fill"></i> May 31, 2026</a></small>
+      </summary>
+
+      <p>This post continues the unintentionally long and plot-twisting series of posts about PCXTOOLS and precompression tools.</p>
+      <p>PCXTOOLS have been updated with a newer version of the optimize-for-compression algorithm.
+        This algorithm is cleaner, simpler, and produces more <em>natural</em> patterns
+        (i.e.: the patterns are closer to the patterns that would have been generated if manually converting the graphics to data).</p>
+      <p>As this algorithms is consistently better, it is always active and the optimization flag (<code>-o</code>) has been removed.
+        Some new flags have appeared in order to steer the optimization if required
+        (related to foreground/background selection and stripped image detection,
+        and mostly unnecesary but for minutely gains in edge cases).</p>
+      <p>PCXTOOLS is again the tool to use (or, at least, the tool <em>I</em> use),
+        and precompression tools can be considered superseded and deprecated.
+        Their repository, however, will not be removed as it is still quite useful for metering the performance of different algorithms,
+        and the precompression step can still be useful when optimizing already exisiting data files.</p>
+      <p><br>Get the new version and browse the source code at
+        <a href="https://github.com/theNestruo/pcxtools">github.com/theNestruo/pcxtools</a></p>
+      <p>Happy pixelarting!!</p>
+    </details>
+
+    <details>
+      <summary>An update on PCXTOOLS and precompression tools
           <small><a id="link-2026-01-18" href="#link-2026-01-18"><i class="bi-share-fill"></i> Jan 18, 2026</a></small>
       </summary>
 
