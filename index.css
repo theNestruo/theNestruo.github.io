@@ -142,6 +142,11 @@ details > p > img {
 	border-radius: 0.4rem
 }
 
+details > p:has(img),
+details > p:has(iframe) {
+	text-align: center;
+}
+
 th {
 	vertical-align: bottom;
 }
