@@ -48,11 +48,11 @@
       <p>As this algorithms is consistently better, it is always active and the optimization flag (<code>-o</code>) has been removed.
         Some new flags have appeared in order to steer the optimization if required
         (related to foreground/background selection and stripped image detection,
-        and mostly unnecesary but for minutely gains in edge cases).</p>
+        and mostly unnecessary but for minutely gains in edge cases).</p>
       <p>PCXTOOLS is again the tool to use (or, at least, the tool <em>I</em> use),
         and precompression tools can be considered superseded and deprecated.
         Their repository, however, will not be removed as it is still quite useful for metering the performance of different algorithms,
-        and the precompression step can still be useful when optimizing already exisiting data files.</p>
+        and the precompression step can still be useful when optimizing already existing data files.</p>
       <p><br>Get the new version and browse the source code at
         <a href="https://github.com/theNestruo/pcxtools">github.com/theNestruo/pcxtools</a></p>
       <p>Happy pixelarting!!</p>
@@ -81,14 +81,14 @@
           <small><a id="link-2026-01-04" href="#link-2026-01-04"><i class="bi-share-fill"></i> Jan 4, 2026</a></small>
       </summary>
 
-      <p>As already hinted in the <a href="#link-2025-12-09">lastest post</a> about
+      <p>As already hinted in the <a href="#link-2025-12-09">latest post</a> about
         <a href="https://github.com/theNestruo/pcxtools">github.com/theNestruo/pcxtools</a>,
         several optimization algorithms to improve charset compression ratios have been implemented and measured.</p>
       <p>As PCXTOOLS are coded in C, and its code is not well-suited to implement those algorithms,
         they have been implemented as a separate command line application instead of embedding them in PCXTOOLS.
         PCXTOOLS will keep the optimization flag (<code>-o</code>), despite it can be considered superseded.</p>
       <p>This way, they can be used with already converted data, or with data created with any other conversion tool.</p>
-      <p><br>The lastest post lacked a visual explanation on why this optimizations are possible and how do they work.
+      <p><br>The latest post lacked a visual explanation on why this optimizations are possible and how do they work.
         Let&apos;s fix it by using some of the 16x16 tiles of the original freeware version of
         <a href="https://ninjasenki.com/">Ninja Senki</a> (&copy; 2010 Jonathan Lavigne)
         as an example.</p>
@@ -138,7 +138,7 @@
         (e.g.: PCXTOOLS have flags to control how the patterns will be generated).</p>
       <p>Variations are possible because each line can be, for example, inverted. The foreground and background colors
         can be swapped and the pattern negated and the line would still render as the same visual image.</p>
-      <p>But variations are also possible also because, ocassionally, there are unused values.
+      <p>But variations are also possible also because, occasionally, there are unused values.
         Lines with all bits set (or reset) will only use one of the color, either foreground or background,
         and the other color can take any value without altering the rendered image.
         Similarly, lines with both colors set to the same value can take any value in their pattern
@@ -186,7 +186,7 @@
           <tr><td>0000&nbsp;0000</td><td class="ignored">0</td><td class="color-1">1</td> <td>0000&nbsp;0000</td><td class="ignored">0</td><td class="color-1">1</td></tr>
         </tbody>
       </table>
-      <p><br>By carefully chosing the variation and the unused value to set, it is possible to reduce
+      <p><br>By carefully choosing the variation and the unused value to set, it is possible to reduce
         the count of different values in the color table (CLRTBL) and to create longer chunks of repeated values.</p>
       <p>Data with these characteristics is likely to yield better compression ratios
         in either RLE-based compression algorithms or dictionary coders compression algorithms
@@ -288,7 +288,7 @@
       <p><br>As both optimizations cannot happen at the same time to the same lines,
         it is necessary choose which one will be prioritized.</p>
       <p>Several different algorithms have been implemented:
-        focus on getting chunks of repetitition in either CHRTBL or CLRTBL, with or without touching the other table.
+        focus on getting chunks of repetition in either CHRTBL or CLRTBL, with or without touching the other table.
         Also, several merging strategies have been implemented to combine both sets of optimizations.</p>
       <p>Compression ratio improvement will vary depending on the particular charset and the actual compression tool.
         However, to gather sample data, all optimization algorithm combinations have been applied to different charsets,
