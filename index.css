@@ -1,72 +1,15 @@
 /* Typography */
 
-/* @import url('https://fonts.cdnfonts.com/css/literata-book'); */
-@font-face {
-	font-display: swap;
-    font-family: 'Literata Book';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook.woff') format('woff');
-}
-@font-face {
-	font-display: swap;
-    font-family: 'Literata Book';
-    font-style: italic;
-    font-weight: 400;
-    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-Italic.woff') format('woff');
-}
-@font-face {
-	font-display: swap;
-    font-family: 'Literata Book';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-Medium.woff') format('woff');
-}
-@font-face {
-	font-display: swap;
-    font-family: 'Literata Book';
-    font-style: italic;
-    font-weight: 500;
-    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-MediumItalic.woff') format('woff');
-}
-@font-face {
-	font-display: swap;
-    font-family: 'Literata Book';
-    font-style: normal;
-    font-weight: 600;
-    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-Semibold.woff') format('woff');
-}
-@font-face {
-	font-display: swap;
-    font-family: 'Literata Book';
-    font-style: italic;
-    font-weight: 600;
-    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-SemiboldItalic.woff') format('woff');
-}
-@font-face {
-	font-display: swap;
-    font-family: 'Literata Book';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-Bold.woff') format('woff');
-}
-@font-face {
-	font-display: swap;
-    font-family: 'Literata Book';
-    font-style: italic;
-    font-weight: 700;
-    src: local('Literata Book'), url('https://fonts.cdnfonts.com/s/17772/LiterataBook-BoldItalic.woff') format('woff');
-}
-
+@import url('https://fonts.cdnfonts.com/css/literata-book?styles=24047,24042,24040,24041');
 
 body {
-	font-family: 'Literata Book', serif;
+	font-family: 'Literata Book', Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
 	font-weight: normal;
 	text-wrap: pretty;
 }
 
 h1, details > summary, h3 {
-	font-weight: 600;
+	font-weight: bold;
 	text-wrap: balance;
 }
 
@@ -75,7 +18,7 @@ header > p > small,
 details > summary > small,
 details > h3 > small {
 	font-size: 1rem;
-	font-weight: 400;
+	font-weight: normal;
 	opacity: 0.75;
 }
 
@@ -83,11 +26,11 @@ details > h3 > small {
 
 header {
 	border-bottom: 1px solid var(--border);
-}
 
-header > a {
-	float: right;
-	font-size: calc(1rem * 5 / 3);
+	& > a {
+		float: right;
+		font-size: calc(1rem * 5 / 3);
+	}
 }
 
 /* Content (as collapsible articles) */
@@ -95,29 +38,30 @@ header > a {
 details {
 	background-color: inherit;
 	padding: 0;
-}
 
-details[open] {
-	padding: 0 0 2rem;
-	border-bottom: 1px solid var(--border);
-	border-radius: 0;
-}
+	&[open] {
+		padding: 0 0 2rem;
+		border-bottom: 1px solid var(--border);
+		border-radius: 0;
+	}
 
-details > summary {
-	background-color: inherit;
-	list-style: none;
-	font-size: calc(1rem * 5 / 3);
-	font-weight: 600;
-}
 
-details > summary small {
-	font-family: system-ui, sans-serif;
-	font-size: 1rem;
-	font-weight: 400;
-}
+	& > summary {
+		background-color: inherit;
+		list-style: none;
+		font-size: calc(1rem * 5 / 3);
+		font-weight: bold;
 
-details > summary:hover {
-	text-decoration: none;
+		& small {
+			font-family: system-ui, sans-serif;
+			font-size: 1rem;
+			font-weight: normal;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 /* Content (details) */
@@ -204,50 +148,54 @@ footer {
 
 .precompression-table {
 	table-layout: auto;
-}
-.precompression-table tbody td:has(img) {
-	width: 100%;
-}
-.precompression-table tbody td img {
-	image-rendering: pixelated;
-	width: 100%;
-}
-.precompression-table tbody td {
-	font-family: monospace;
-	text-align: center;
-	vertical-align: middle;
-	padding-block: 0;
-	white-space: nowrap;
-}
-.precompression-table td.color-0 {
-	background: repeating-linear-gradient(-45deg, #000, #000 8px, #444 8px, #444 16px);
-	color: #fff;
-}
-.precompression-table td.color-1 {
-	background-color: #000000;
-	color: #fff;
-}
-.precompression-table td.color-3 {
-	background-color: #5EDC78;
-	color: #000;
-}
-.precompression-table td.color-4 {
-	background-color: #5455ED;
-	color: #fff;
-}
-.precompression-table td.color-5 {
-	background-color: #7D76FC;
-	color: #000;
-}
-.precompression-table td.color-c {
-	background-color: #21B03B;
-	color: #000;
-}
-.precompression-table td.color-f {
-	background-color: #FFFFFF;
-	color: #000;
-}
-.precompression-table td.ignored {
-	background: repeating-linear-gradient(-45deg, #202, #202 4px, #c0c 4px, #c0c 8px);
-	color: #fff;
+
+	& tbody td:has(img) {
+		width: 100%;
+	}
+
+	& tbody td {
+		font-family: monospace;
+		text-align: center;
+		vertical-align: middle;
+		padding-block: 0;
+		white-space: nowrap;
+
+		& img {
+			image-rendering: pixelated;
+			width: 100%;
+		}
+
+		&.color-0 {
+			background: repeating-linear-gradient(-45deg, #000, #000 8px, #444 8px, #444 16px);
+			color: #fff;
+		}
+		&.color-1 {
+			background-color: #000000;
+			color: #fff;
+		}
+		&.color-3 {
+			background-color: #5EDC78;
+			color: #000;
+		}
+		&.color-4 {
+			background-color: #5455ED;
+			color: #fff;
+		}
+		&.color-5 {
+			background-color: #7D76FC;
+			color: #000;
+		}
+		&.color-c {
+			background-color: #21B03B;
+			color: #000;
+		}
+		&.color-f {
+			background-color: #FFFFFF;
+			color: #000;
+		}
+		&.ignored {
+			background: repeating-linear-gradient(-45deg, #202, #202 4px, #c0c 4px, #c0c 8px);
+			color: #fff;
+		}
+	}
 }
