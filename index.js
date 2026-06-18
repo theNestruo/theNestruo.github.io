@@ -17,6 +17,12 @@ function updateThemeVisibility(dark) {
 	return true;
 }
 
+function decorateSummaryLinks() {
+	for (const a of document.querySelectorAll("details summary a")) {
+		a.innerHTML = `<i class="bi-share-fill"></i> ${a.innerHTML}`;
+	}
+}
+
 function decorateLinks() {
 	const biByDomain = {
 		"bsky.app": "bluesky",
@@ -65,6 +71,7 @@ function openDetailsForLocation(location) {
 
 const isDarkPreferred = window.matchMedia('(prefers-color-scheme: dark)').matches;
 updateThemeVisibility(isDarkPreferred);
+decorateSummaryLinks();
 decorateLinks();
 decorateImages();
 openDetailsForLocation(document.location);

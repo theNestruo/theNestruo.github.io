@@ -152,6 +152,12 @@ th {
 	vertical-align: bottom;
 }
 
+/* Content (image dialog) */
+
+dialog#dialogImage {
+	padding: 1.5rem;
+}
+
 /* Footer */
 
 footer {
@@ -211,6 +217,7 @@ footer {
 	text-align: center;
 	vertical-align: middle;
 	padding-block: 0;
+	white-space: nowrap;
 }
 .precompression-table td.color-0 {
 	background: repeating-linear-gradient(-45deg, #000, #000 8px, #444 8px, #444 16px);
