@@ -3,7 +3,7 @@
 @import url('https://fonts.cdnfonts.com/css/literata-book?styles=24047,24042,24040,24041');
 
 body {
-	font-family: 'Literata Book', Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+	font-family: 'Literata Book', 'Literata', 'Bookerly', Georgia, serif;
 	font-weight: normal;
 	text-wrap: pretty;
 }
@@ -53,7 +53,7 @@ details {
 		font-weight: bold;
 
 		& small {
-			font-family: system-ui, sans-serif;
+			font-family: sans-serif;
 			font-size: 1rem;
 			font-weight: normal;
 		}
@@ -105,7 +105,7 @@ dialog#dialogImage {
 /* Footer */
 
 footer {
-	font-family: system-ui, sans-serif;
+	font-family: sans-serif;
 }
 
 /* Modifier classes */
@@ -154,7 +154,7 @@ footer {
 	}
 
 	& tbody td {
-		font-family: monospace;
+		font-family: monospace, monospace;
 		text-align: center;
 		vertical-align: middle;
 		padding-block: 0;
