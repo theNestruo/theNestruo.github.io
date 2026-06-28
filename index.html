@@ -36,6 +36,158 @@
 
     <br>
 
+    <!--
+    <details>
+      <summary>Title
+        <small><a id="link-2026-12-31" href="#link-2026-12-31">Dec 31, 2026</a></small>
+      </summary>
+
+      <p>Content.</p>
+    </details>
+    -->
+
+    <details>
+      <summary>Syntax Highlighting that Works for Me
+        <small><a id="link-2026-06-30" href="#link-2026-06-30">Jun 30, 2026</a></small>
+      </summary>
+
+      <p>Syntax highlighting in IDE and code editors has grown over the years. Or, more specifically,
+        the number of different types of tokens (and, therefore, the number of colors used), has grown over the years.
+        Nowadays, even so called <em>minimal</em> themes use dozens of different colors.</p>
+      <p>On the other hand, there are several voices that advocate for not using syntax highlight at all,
+        or for using a really minimal syntax highlight. Monochrome text with, for example, only the comments highlighted.</p>
+      <p>I, for one, live in a middle ground; slightly biased towards reduced (or simplified) syntax highlighting.
+        Because if everything ends up in a different color, nothing is really highlighted,
+        and then the benefits of syntax highlighting disappear.
+        But, on the other hand, not using syntax highlight at all feels like a lost opportunity to use
+        the information channel color conveys.
+        Or two information channels, if we consider font styles in addition to colors.</p>
+      <p>I played a bit with syntax highlighting <a href="#link-2021-04-23">in the past</a>
+        when created my own VS Code theme (published to the marketplace mostly because
+        that was the easier way to share it between my computers). It was called
+        <a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.dark-minus-theme">Dark-</a>;
+        an obvious word play with the default <em>Dark+</em> theme of VS code.
+        Those themes were based on the default <em>Dark (Visual Studio)</em> and <em>Dark Modern</em> themes,
+        with less syntax highlight.</p>
+
+      <p><br>After reading a couple of posts about syntax highlighting, I decided to fully develop my ideas
+        in a custom theme. I am partially colorblind, so using more than a couple of hues is useless for me.
+        It is not a real problem because there are only three things I prefer having a separate foreground color:
+        keywords, comments, and string literals.<p>
+
+      <h3>Comments</h3>
+      <p>Some people argue that, if you are properly writing your comments, they be <em>highlighted</em>
+        (instead of dimmed, as most themes do). See, for example, the famous blogpost
+        <a href="https://tonsky.me/blog/syntax-highlighting/">I am sorry,
+          but everyone is getting syntax highlighting wrong</a> by Nikita Prokopov (tonsky).</p>
+      <p>If comments were only used in the traditional sense of the word (i.e.: an explanation of the code that follows),
+        I would agree.</p>
+      <p>Those comments can be used to avoid reading (and understanding) code until the next comment or the next blank line,
+        so it makes sense having them highligthed. They help you locate the relevant section of the code inside a method
+        or a function. They help you spot the code sections within a method or function,
+        and move between them in a similar way as using the <em>outline</em> (or <em>go to symbol</em>) view
+        to move between methods and functions in a file.</p>
+      <p>However, properly written explanatory comments are not the only type of comments in my code.</p>
+      <p>There are also <em>technical comments</em>. Such as Javadoc, that is not meant to be read
+        within the actual source code, but to be displayed to you by your IDE or text editor
+        when hovering over a method call in a completely different file.
+        Even if the code is self-documented, having the comment is useful to prevent you from having to open the code.</p>
+      <p>This category also includes <em>marker comments</em> to denote intentionality in code that is apparently wrong,
+        or that quality code tools flag as problematic. For example, a <tt>// fallthrough</tt> comment in a <tt>case</tt>
+        without <tt>break</tt>, or a comment to mark a false-positive linter warning.</p>
+      <p>Commented out code is another type of comment you should not have, according the books.
+        However, it can have legit uses. I use it to denote code that <em>should be there</em>,
+        but it is not because it is no longer necessary for some incidental reason,
+        and has been removed for optimization purposes, particulary when coding in assembly language.
+        I like the code to be present (as a comment) because it <em>is</em> part the of the algorithm,
+        but also because it may become necessary again if something changes in the surroundings of that code.</p>
+      <p>All these comments (technical comments, marker comments, commented out code)
+        act as mere annotations and should be dimmed, not highlighted.
+        And, as syntax highlighting cannot distinguish them from proper comments, those get dimmed as well.</p>
+
+      <h3>String literals</h3>
+      <p>Highlighted string literals can be really helpful to locate a non-terminated string,
+        and help sorting out what are the actual string parts from the code parts in long concatenations.</p>
+
+      <h3>Keywords</h3>
+      <p>The main benefit I get from syntax highlight, is when <s>reading</s> <em>skimming over</em> code.</p>
+      <p>I like the keywords highlighted because I like to be able to identify the source code structures
+        (such as methods, loops, early exits points) without even reading the actual code.
+        To be able to see this constructions, I like keywords to have not just a different hue
+        than the default foreground color, but also a different, darker, brightness, so they stand out.</p>
+      <p>Some languages are more prone to this skimming than others and, within the same language,
+        some constructions are more obvious than others. For example, a classic <tt>for</tt> loop in Java
+        has a very distinctive visual signature, but the equivalent stream with lambdas is undistinguishable
+        from a chain of method calls.</p>
+      <p>It is possible to <em>view</em> the the <tt>for</tt> loop and the early <tt>return</tt>s
+        in the following absurdly small and blurred block of code:</p>
+      <p><img src="images/WorksForMe-structure.png"></p>
+      <p>I obviously hope all of you are reading code using a reasonable font size and a non-blurry monitor,
+        but being able to identify the code structure at a glance definitely helps
+        to instinctively know where to search what you are looking for.</p>
+
+      <p><br>But nothing I have said yet deserves a new custom theme (<em>Dark-</em> already implemented these ideas).
+        And definitely would not deserve this blog post.
+        Let&apos;s dive into the real reasons that motivated me to create a custom theme:</p>
+
+      <h3>Punctuation</h3>
+      <p>It should be clear by now that I have a strong preference for <em>skimming over</em> code,
+        eveng skiping reading it at all if possible.</p>
+      <p>When looking for occurrences of some method, variable or value, I also like to do it visually.
+        If I am looking for something called <tt>statusBarItem</tt>, for example,
+        my eyes will try to identify the shape <tt>stxxxxXxxXxem</tt>.
+        This poses no problem while the punctuation is easily distinguishable from the actual references:
+        small characters (such as dot) or thin characters (parenthesis or brackets) do never look like a part
+        of the actual reference; they even help separating the identifiers.
+        <tt>object.value</tt> looks like two separate shapes, <tt>xXxxxX</tt> and <tt>xxXxx</tt> separated by a dot.</p>
+      <p>However, other punctuations, such as the null-coalescing operator (<tt>object?.value</tt>),
+        get visually merged with the identifiers, and the shape of the left identifier looks like <tt>xXxxxXX</tt>,
+        which can get overlooked if you are visually looking for <tt>xXxxxX</tt>.</p>
+      <p>Applying an almost unnoticeable dim to these punctuaction symbols
+        prevents them from merging into the identifiers. <tt>theStatusBarItem</tt> can be easily spotted in the
+        following blurred block of code, even when it is followed by a null-colaescing operator:</p>
+      <p><img src="images/WorksForMe-punctuation.png"></p>
+
+      <h3>Regexp, placeholders, and string templates</h3>
+      <p>Take a look at the following regular expressions, rendered with the default <em>Visual Studio Dark</em> theme:</p>
+      <p><img src="images/WorksForMe-regexp-before.png"></p>
+      <p>There are three different colors within the actual regular expressions (red, yellow, blue),
+        yet the syntax highlighting seems arbitrary and the colors do not help to understand the regular expressions.</p>
+      <p>A more insteresting way of highlighting regular expressions is to highlight
+        the <em>actual</em> characters of the strings that will be matched against the regular expressions.
+        Something like this:</p>
+      <p><img src="images/WorksForMe-regexp-after.png"></p>
+      <p><br>The same idea (i.e.: dim whatever is not part of the visible string) can be applied
+        to special characters and placeholders within strings, making the actual text to stand out.
+        In the following example, see how clear looks the potentially confusing <tt>$${hex}</tt> string template:</p>
+      <p><img src="images/WorksForMe-stringTemplates.png"></p>
+
+      <h3>Name-value pairs based languages</h3>
+      <p>For name-value pairs based languages, such as JSON or YAML, the syntax gets dimmed.
+        The default contrast is kept for the actual keys and values, making those files easier to read.
+        Specific punctuation is highlighted to make it stand out. For example, in JSON, square brackets (arrays)
+        get highlighted to avoid confusion with curly brackets (objects).</p>
+      <p><img src="images/WorksForMe-json.png"></p>
+
+      <h3>Text-based languages</h3>
+      <p>When it comes to text-based languages, such as Markdown or HTML, an almost monotonal syntax highlight
+        has been chosen.</p>
+      <p>The rationale is that the rendered text will not have any syntax highlight, so having the source code
+        syntax highlighted will give a completely different impression between the rendered text and the source code.
+        For example, syntax highlighted Markdown gives the impression that the emphasized text will be noticeable
+        and very easy to spot while, in fact, it blends with the rest of the text once rendered.</p>
+      <p><img src="images/WorksForMe-html.png"></p>
+
+      <p><br>There are more tweaks here and there; I keep changing the theme whenever I stumble upon something
+        that bothers me or that can be improved. But, in the current state, I consider the theme mainly finished,
+        at least for the languages I work with.</p>
+
+      <p><br>If you want to try if Works for Me also works for you, get it here:
+        <a href="https://marketplace.visualstudio.com/items?itemName=theNestruo.worksforme-theme">Works for Me</a>,
+        or here: <a href="https://open-vsx.org/extension/theNestruo/worksforme-theme">Works for me</a></p>
+      <p>Happy coding!!</p>
+    </details>
+
     <details>
       <summary>Another update on PCXTOOLS and precompression tools
           <small><a id="link-2026-05-31" href="#link-2026-05-31">May 31, 2026</a></small>
