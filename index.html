@@ -47,6 +47,51 @@
     -->
 
     <details>
+      <summary>F-1 Spirit with penguins
+        <small><a id="link-2026-07-26" href="#link-2026-07-26">Jul 26, 2026</a></small>
+      </summary>
+
+      <p>If you take a look at a ROM image of F-1 Spirit &mdash; The Way to Formula 1 (MSX, Konami, 1987)
+        you will eventually find the uncompressed sprites for the cars, the semaphores, the explosions&hellip;
+        If you look carefully enough, you may also glimpse the compressed graphics for the tileset
+        (though they will not be as clear as if they were uncompressed).</p>
+      <p>And, eventually, you will also find this sprites that look like a penguin:</p>
+      <p><img src="images/F1Spirit-binxelview.png" /></p>
+      <p>With a little bit of imagination (not too much, to be honest),
+        a mockup can be composed to guess how those sprites would look in-game:</p>
+      <p><img src="images/F1Spirit-mockup.png" /></p>
+      <p>As far as I know, there is no documentation about this penguin in F-1 Spirit.
+        No cheats page mentions it. No cartridge combination list page mentions it. No forum post mentions it.</p>
+      <p>So what are those sprites used for?</p>
+
+      <p><br>There are two versions of F-1 Spirit that are known good dumps.
+        The first version (SHA-1 <code>ff72a1788d47f9876d9fabd720f6a289fb409090</code>)
+        is recognizable by the word <em>MISSION</em> in the HUD.
+        The second version (SHA-1 <code>42fbb18722df3e34e5b0f935a2dc0ce0d85099e9</code>)
+        uses the word <em>GEAR</em> in the HUD.
+        There are more changes between them (such as fixed typos)
+        but I have never found a detailed comparison of the actual differences.</p>
+      <p>The penguin graphic is present in both versions.
+        However, there is no reference to its memory address anywhere in the code, in any of the versions.
+        It looks like a leftover of a never implemented cheat&hellip;</p>
+
+      <p><br>Until you check the "Early Sample Version" dump (SHA-1 <code>d2bfd036c8520091375f7d0b3bb0c810e04dd9bf</code>).</p>
+
+      <p><br>In that early sample version, the graphic data of the penguin is actually referenced from the code
+        under a particular condition: the RAM address <code>0xE1DE</code> should contain <code>0x01</code>.
+        That address is written by the code that detects the cartridge combinations, and nowhere else.
+        So the next question is: which cartrige combination enables the penguin graphic?<p>
+      <p>The answer is disappointing: none of them. All the supported cartridge combinations
+        (Game Master, King Kong 2, and Q-Bert) set the value <code>0x02</code>;
+        none of them sets the expected <code>0x01</code>.</p>
+
+      <p><br>Fortunately for us, it is easy to patch the ROM image to use the value <code>0x01</code> instead of <code>0x02</code>,
+        then verify that it does the trick, and finally uncover this secret that F-1 Spirit have been hiding for 39 years:</p>
+      <p><img src="images/F1Spirit-screenshot.png" /></p>
+      <p>Have fun!!</p>
+    </details>
+
+    <details>
       <summary>Syntax Highlighting that Works for Me
         <small><a id="link-2026-06-30" href="#link-2026-06-30">Jun 30, 2026</a></small>
       </summary>
@@ -93,8 +138,8 @@
         when hovering over a method call in a completely different file.
         Even if the code is self-documented, having the comment is useful to prevent you from having to open the code.</p>
       <p>This category also includes <em>marker comments</em> to denote intentionality in code that is apparently wrong,
-        or that quality code tools flag as problematic. For example, a <tt>// fallthrough</tt> comment in a <tt>case</tt>
-        without <tt>break</tt>, or a comment to mark a false-positive linter warning.</p>
+        or that quality code tools flag as problematic. For example, a <code>// fallthrough</code> comment in a <code>case</code>
+        without <code>break</code>, or a comment to mark a false-positive linter warning.</p>
       <p>Commented out code is another type of comment you should not have, according the books.
         However, it can have legit uses. I use it to denote code that <em>should be there</em>,
         but it is not because it is no longer necessary for some incidental reason,
@@ -116,10 +161,10 @@
         To be able to see this constructions, I like keywords to have not just a different hue
         than the default foreground color, but also a different, darker, brightness, so they stand out.</p>
       <p>Some languages are more prone to this skimming than others and, within the same language,
-        some constructions are more obvious than others. For example, a classic <tt>for</tt> loop in Java
+        some constructions are more obvious than others. For example, a classic <code>for</code> loop in Java
         has a very distinctive visual signature, but the equivalent stream with lambdas is undistinguishable
         from a chain of method calls.</p>
-      <p>It is possible to <em>view</em> the the <tt>for</tt> loop and the early <tt>return</tt>s
+      <p>It is possible to <em>view</em> the the <code>for</code> loop and the early <code>return</code>s
         in the following absurdly small and blurred block of code:</p>
       <p><img src="images/WorksForMe-structure.png"></p>
       <p>I obviously hope all of you are reading code using a reasonable font size and a non-blurry monitor,
@@ -134,17 +179,17 @@
       <p>It should be clear by now that I have a strong preference for <em>skimming over</em> code,
         eveng skiping reading it at all if possible.</p>
       <p>When looking for occurrences of some method, variable or value, I also like to do it visually.
-        If I am looking for something called <tt>statusBarItem</tt>, for example,
-        my eyes will try to identify the shape <tt>stxxxxXxxXxem</tt>.
+        If I am looking for something called <code>statusBarItem</code>, for example,
+        my eyes will try to identify the shape <code>stxxxxXxxXxem</code>.
         This poses no problem while the punctuation is easily distinguishable from the actual references:
         small characters (such as dot) or thin characters (parenthesis or brackets) do never look like a part
         of the actual reference; they even help separating the identifiers.
-        <tt>object.value</tt> looks like two separate shapes, <tt>xXxxxX</tt> and <tt>xxXxx</tt> separated by a dot.</p>
-      <p>However, other punctuations, such as the null-coalescing operator (<tt>object?.value</tt>),
-        get visually merged with the identifiers, and the shape of the left identifier looks like <tt>xXxxxXX</tt>,
-        which can get overlooked if you are visually looking for <tt>xXxxxX</tt>.</p>
+        <code>object.value</code> looks like two separate shapes, <code>xXxxxX</code> and <code>xxXxx</code> separated by a dot.</p>
+      <p>However, other punctuations, such as the null-coalescing operator (<code>object?.value</code>),
+        get visually merged with the identifiers, and the shape of the left identifier looks like <code>xXxxxXX</code>,
+        which can get overlooked if you are visually looking for <code>xXxxxX</code>.</p>
       <p>Applying an almost unnoticeable dim to these punctuaction symbols
-        prevents them from merging into the identifiers. <tt>theStatusBarItem</tt> can be easily spotted in the
+        prevents them from merging into the identifiers. <code>theStatusBarItem</code> can be easily spotted in the
         following blurred block of code, even when it is followed by a null-colaescing operator:</p>
       <p><img src="images/WorksForMe-punctuation.png"></p>
 
@@ -159,7 +204,7 @@
       <p><img src="images/WorksForMe-regexp-after.png"></p>
       <p><br>The same idea (i.e.: dim whatever is not part of the visible string) can be applied
         to special characters and placeholders within strings, making the actual text to stand out.
-        In the following example, see how clear looks the potentially confusing <tt>$${hex}</tt> string template:</p>
+        In the following example, see how clear looks the potentially confusing <code>$${hex}</code> string template:</p>
       <p><img src="images/WorksForMe-stringTemplates.png"></p>
 
       <h3>Name-value pairs based languages</h3>
